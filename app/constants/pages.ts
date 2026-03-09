@@ -12,7 +12,7 @@ export const pages: Page[] = [
 
   {
     title: 'ABOUT US',
-    path: '/aboutus',
+    path: '/about',
   },
   {
     title: 'CONTACT',

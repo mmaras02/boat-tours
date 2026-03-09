@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "./components/Navbar";
 
 import { Playfair_Display, Playfair_Display_SC } from 'next/font/google';
+import { Footer } from "./components/Footer";
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -64,6 +65,8 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <Footer />
+
       </body>
     </html>
   );

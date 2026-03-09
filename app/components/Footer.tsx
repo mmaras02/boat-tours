@@ -5,16 +5,10 @@ import { usePathname } from "next/navigation";
 import { FaFacebookF, FaInstagram, FaTwitter, FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { IoMdMailOpen } from "react-icons/io";
+import { pages } from "../constants/pages";
 
 export function Footer() {
     const pathname = usePathname();
-
-    const pages = [
-        { title: "Home", path: "/" },
-        { title: "Tours", path: "/tours" },
-        { title: "About Us", path: "/about" },
-        { title: "Contact", path: "/contact" }
-    ];
 
     return (
         <footer>
@@ -73,7 +67,7 @@ export function Footer() {
 
             </div>
 
-            <div className="border-t border-white/10 py-4 text-center text-slate-200 text-sm bg-fixed-dark">
+            <div className="border-t border-white/10 py-4 text-center text-slate-200 bg-[#c79432] text-sm">
                 © {new Date().getFullYear()} Rosa Ventorum. All rights reserved.
             </div>
         </footer>

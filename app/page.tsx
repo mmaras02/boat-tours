@@ -22,7 +22,6 @@ export default function Home() {
       <OptionsSection backgroundImage="/images/galleryImg.avif" />
       <ReasonsSection />
       <DestinationsSection />
-      <Footer />
 
     </main>
   );
