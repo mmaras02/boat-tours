@@ -6,7 +6,7 @@ export const LocationMap = () => {
     };
 
     return (
-        <div className="relative h-100 bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200">            {/* Header */}
+        <div className="relative h-125 bg-white rounded-lg shadow-xl overflow-hidden border-2 border-gray-200">            {/* Header */}
 
             {/* Google Maps Embed - Gat Svetog Duje 1, Split */}
             <iframe

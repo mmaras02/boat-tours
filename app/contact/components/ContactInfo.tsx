@@ -9,32 +9,32 @@ export const ContactInfo = () => {
             <p className="mb-10">Book your boat trip or private boat tour from Split to most popular islands and caves with the best value for money and price guarantee.</p>
 
             <div className="flex flex-col gap-6">
-                <div className="flex gap-4 items-start">
-                    <IoLocationOutline className="w-6 h-6 text-accent shrink-0 mt-1" />
+                <div className="flex gap-3 items-start">
+                    <IoLocationOutline className="text-2xl text-accent shrink-0 mt-1" />
                     <div>
                         <p className="font-semibold">Our Address</p>
                         <p className="text-primary">Radovanova 10, Split, Croatia</p>
                     </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
-                    <FaPhoneAlt className="w-6 h-6 text-accent shrink-0 mt-1" />
+                <div className="flex gap-3 items-start">
+                    <FaPhoneAlt className="text-xl text-accent shrink-0 mt-1" />
                     <div>
                         <p className="font-semibold">Call Us</p>
                         <p className="text-primary">+385 99 306 1719</p>
                     </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
-                    <IoMdMailOpen className="w-6 h-6 text-accent shrink-0 mt-1" />
+                <div className="flex gap-3 items-start">
+                    <IoMdMailOpen className="text-xl text-accent shrink-0 mt-1" />
                     <div>
                         <p className="font-semibold">Email Us</p>
                         <p className="text-primary">rosaVentorum@gmail.com</p>
                     </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
-                    <FaRegClock className="w-6 h-6 text-accent shrink-0 mt-1" />
+                <div className="flex gap-3 items-start">
+                    <FaRegClock className="text-xl text-accent shrink-0 mt-1" />
                     <div>
                         <p className="font-semibold">Working Hours</p>
                         <p className="text-primary">Mon–Sat: 08:00–20:00</p>

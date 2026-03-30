@@ -104,7 +104,7 @@ export const MessageForm = () => {
   };
 
   const inputClassName = (fieldName: keyof FormErrors) => `
-    w-full px-4 py-3 border-2 rounded-lg transition-all outline-none bg-white
+    w-full px-2 py-2 border-2 bg-slate-50 transition-all outline-none
     ${errors[fieldName]
       ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
       : 'border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20'
@@ -112,11 +112,11 @@ export const MessageForm = () => {
   `;
 
   return (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6">
-      <div className="rounded-xl bg-slate-100  shadow-xl border border-slate-300 p-6 md:p-12 border-l-4 border-accent">
-        <div className="mb-8 text-center md:text-left">
-          <h2 className='text-2xl font-semibold'>Form information</h2>
-          <p>Fill out the form if you have any questions!</p>
+    <div className="px-4 sm:px-6">
+      <div className=" bg-slate-100 shadow-xl border-2 border-slate-200 p-6 md:p-12 border-l-4 border-accent">
+        <div className="mb-10 text-start md:text-left">
+          <h2 className='text-2xl font-semibold'>Send us a message!</h2>
+          <p className='text-slate-500 text-base'>Fill out the form if you have any questions!</p>
           {/* <h2
             className="text-3xl md:text-4xl font-bold text-dark-slate mb-2"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -269,7 +269,7 @@ export const MessageForm = () => {
             type="submit"
             disabled={isSubmitting}
             className={`
-              w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg 
+              w-full bg-accent text-white font-semibold py-3 px-6 
               transition-all duration-300 shadow-md hover:shadow-lg text-lg mt-2
               ${isSubmitting
                 ? 'opacity-75 cursor-not-allowed bg-accent/80'

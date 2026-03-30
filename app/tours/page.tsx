@@ -2,13 +2,16 @@
 
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
-import { tours } from "../constants/tours";
 import { TOUR_FILTERS } from "../constants/filters";
 import { FilterButton } from "../components/FilterButton";
 import { TourCard } from "../components/TourCard";
 import { TourFilter } from "../types/tour";
+import { getAllTours, getFeaturedTours } from "../utils/tour";
+import { tours } from "../data/tours";
 
 export default function ToursPage() {
+    const allTours = getAllTours();
+    //const featuredTours = getFeaturedTours();
     const [activeFilter, setActiveFilter] = useState<TourFilter>("all");
 
     const filteredTours = useMemo(() => {

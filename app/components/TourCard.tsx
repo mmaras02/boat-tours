@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Tour } from "../types/tour";
 
@@ -9,11 +10,17 @@ export const TourCard = ({ tour }: tourCardProps) => {
     return (
         <motion.article
             key={tour.id}
-            className="bg-white shadow-lg hover:shadow-xl transition-shadow overflow-hidden flex flex-col"
+            className="relative bg-white shadow-lg hover:shadow-xl transition-shadow overflow-hidden flex flex-col"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: tour.id * 0.1 }}
         >
+            <Link
+                href={`/tours/${tour.slug}`}
+                aria-label={`View details for ${tour.title}`}
+                className="absolute inset-0 z-10"
+            />
+
             {tour.image ? (
                 <img src={tour.image} alt={tour.title} className="h-56 bg-linear-to-br from-[#0b4f5a] to-[#17384A] w-full object-cover" />
             ) : (
@@ -59,19 +66,19 @@ export const TourCard = ({ tour }: tourCardProps) => {
                     </ul>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-gray-200 flex gap-3">
-                    <a
-                        href="#"
+                <div className="relative z-20 mt-auto pt-4 border-t border-gray-200 flex gap-3">
+                    <Link
+                        href="/contact"
                         className="flex-1 text-center bg-[#c79432] hover:bg-[#b6852d] text-white py-3 px-4 font-semibold text-sm transition"
                     >
                         BOOK NOW
-                    </a>
-                    <a
-                        href="#"
+                    </Link>
+                    <Link
+                        href={`/tours/${tour.slug}`}
                         className="flex-1 text-center border-2 border-[#c79432] text-[#c79432] hover:bg-[#b6852d] hover:text-white py-3 px-4 font-semibold text-sm transition"
                     >
                         DETAILS
-                    </a>
+                    </Link>
                 </div>
             </div>
         </motion.article>
