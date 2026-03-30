@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { TOUR_FILTERS } from "../constants/filters";
 import { FilterButton } from "../components/FilterButton";
 import { TourCard } from "../components/TourCard";
-import { TourFilter } from "../types/tour";
+import { TourFilter } from "../../types/tour";
 import { getAllTours, getFeaturedTours } from "../utils/tour";
 import { tours } from "../data/tours";
 

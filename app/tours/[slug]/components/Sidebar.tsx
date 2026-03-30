@@ -1,4 +1,4 @@
-import { Tour } from "@/app/types/tour"
+import { Tour } from "@/types/tour"
 import { Anchor, Camera, CheckCircle, Heart, Shield, Ship, Star, Sun } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image";

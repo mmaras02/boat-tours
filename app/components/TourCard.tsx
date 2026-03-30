@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Tour } from "../types/tour";
+import { Tour } from "../../types/tour";
 
 interface tourCardProps {
     tour: Tour;

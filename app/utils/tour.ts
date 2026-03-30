@@ -1,5 +1,5 @@
 import { tours } from '../data/tours';
-import { Tour } from '../types/tour';
+import { Tour } from '../../types/tour';
 
 export function getAllTours(): Tour[] {
   return tours;
