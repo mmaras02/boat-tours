@@ -184,7 +184,7 @@ export const BoatInfo = () => {
             {/* Bareboat Details */}
             {rentalType === 'bareboat' && (
               <div className="space-y-6">
-                <div className="bg-blue-50 border-l-4 border-[#c79432] p-6 rounded-r-xl">
+                <div className="border-l-4 border-[#c79432] p-6 rounded-r-xl">
                   <h4 className="text-xl font-bold text-[#17384A] mb-2">
                     Rent Without Skipper
                   </h4>
@@ -216,7 +216,7 @@ export const BoatInfo = () => {
             {/* With Skipper Details */}
             {rentalType === 'captained' && (
               <div className="space-y-6">
-                <div className="bg-blue-50 border-l-4 border-[#c79432] p-6 rounded-r-xl">
+                <div className="border-l-4 border-[#c79432] p-6 rounded-r-xl">
                   <h4 className="text-xl font-bold text-[#17384A] mb-2">
                     Rent With Skipper
                   </h4>

@@ -21,7 +21,7 @@ export default function BoatPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#e5e5e5] pt-40 px-6">
+    <main className="min-h-screen pt-40 px-6">
       <div className="text-center py-12">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#17384A] uppercase tracking-tight">
           Salmeri Calipso 6.30m
