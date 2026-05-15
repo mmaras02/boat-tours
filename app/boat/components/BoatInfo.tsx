@@ -265,10 +265,7 @@ export const BoatInfo = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button
-            href="/contact"
-            className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold p-5 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
+          <button className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold p-5 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             BOOK THIS BOAT NOW
           </button>
           <p className="text-sm text-slate-400 mt-4">
