@@ -14,11 +14,11 @@ export const destinations = [
     image: '/images/brac.jpeg',
     description: 'Scenic coves and unforgettable sunsets.',
   },
-  {
-    title: 'Šolta Bay',
-    image: '/images/solta.webp',
-    description: 'Quiet anchor spots and turquoise sea.',
-  },
+  // {
+  //   title: 'Šolta Bay',
+  //   image: '/images/solta.webp',
+  //   description: 'Quiet anchor spots and turquoise sea.',
+  // },
   {
     title: 'Vis Cliffs',
     image: '/images/vis.jpg',
