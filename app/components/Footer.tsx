@@ -23,13 +23,13 @@ export function Footer() {
           <div className="h-0.5 w-14 bg-[#c79432] mb-6"></div>
           <ul className="text-gray-300 space-y-2">
             <li className="flex items-center gap-2">
-              <CiLocationOn /> Split, Croatia
+              <CiLocationOn /> Uvala Zenta (lučica), Split, Croatia
             </li>
             <li className="flex items-center gap-2">
               <FaPhoneAlt /> +385 99 306 1719
             </li>
             <li className="flex items-center gap-2">
-              <IoMdMailOpen /> rosaVentorum@gmail.com
+              <IoMdMailOpen /> ventiboat@gmail.com
             </li>
           </ul>
         </div>
@@ -57,7 +57,7 @@ export function Footer() {
           <div className="h-0.5 w-14 bg-[#c79432] mb-6"></div>
           <div className="flex space-x-4">
             <a
-              href=""
+              href="https://www.facebook.com/people/VentiBoat/61590072562984/?rdid=4mrmxCOrfQGrn9qH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ETsm4s9Z1%2F"
               className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
             >
               <FaFacebookF size={24} />
@@ -79,7 +79,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-sm dark-background text-gray-300">
-        © {new Date().getFullYear()} Rosa Ventorum. All rights reserved.
+        © {new Date().getFullYear()} Venti Boat. All rights reserved.
       </div>
     </footer>
   );

@@ -8,28 +8,34 @@ import { BoatInfo } from './components/BoatInfo';
 
 export default function BoatPage() {
   const images = [
-    '/images/boat/boat1.webp',
-    '/images/boat/boat2.jpg',
-    '/images/boat/boat3.jpg',
-    '/images/boat/boat4.jpg',
-    '/images/boat/boat6.jpg',
-    '/images/boat/boat7.jpg',
-    '/images/boat/boat8.jpg',
+    '/images/boats/1.png',
+    '/images/boats/2.png',
+    '/images/boats/3.png',
+    '/images/boats/4.jpg',
+    '/images/boats/6.jpg',
+    '/images/boats/7.jpg',
+    '/images/boats/8.jpg',
+    '/images/boats/9.jpg',
+    '/images/boats/10.jpeg',
   ];
 
-  const [selectedImage, setSelectedImage] = useState(images[6]);
+  const [selectedImage, setSelectedImage] = useState(images[1]);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
     <main className="min-h-screen pt-40 px-6">
       <div className="text-center py-12">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#17384A] uppercase tracking-tight">
-          Salmeri Calipso 6.30m
+          Quicksilver Active 605 Open
         </h2>
         <div className="w-24 h-1 bg-[#c79432] mx-auto mt-4 mb-6"></div>
         <p className="text-slate-600 text-lg max-w-3xl mx-auto">
-          Experience the perfect blend of comfort, style, and performance on the
-          Adriatic Sea
+          Comfort, family-friendly motorboat with ideal balance of sporty
+          performance, practicality and sefety for a whole day leisure on the
+          sea. The Boat of the Year 2017 by Moteur Boat Magazine makes best in
+          the category of storage capacities and intelligent use of space, best
+          access from water to cockpit and outstandingly low fuel consumption
+          with the new Mercury EFI 115 CT engine.
         </p>
       </div>
 

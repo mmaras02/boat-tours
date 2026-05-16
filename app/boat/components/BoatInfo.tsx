@@ -54,9 +54,7 @@ export const BoatInfo = () => {
                   <GiSailboat className="text-2xl" />
                 </div>
                 <div className="text-sm text-slate-500">Length</div>
-                <div className="text-xl font-bold text-[#17384A]">
-                  6.30 meters
-                </div>
+                <div className="text-xl font-bold text-[#17384A]">6.46 m</div>
               </div>
 
               <div className="bg-slate-50 p-4 shadow-sm">
@@ -64,9 +62,7 @@ export const BoatInfo = () => {
                   <GiSailboat className="text-2xl" />
                 </div>
                 <div className="text-sm text-slate-500">Width</div>
-                <div className="text-xl font-bold text-[#17384A]">
-                  2.73 meters
-                </div>
+                <div className="text-xl font-bold text-[#17384A]">2.4 m</div>
               </div>
 
               <div className="bg-slate-50 p-4 shadow-sm">
@@ -85,7 +81,7 @@ export const BoatInfo = () => {
                 </div>
                 <div className="text-sm text-slate-500">Engine</div>
                 <div className="text-xl font-bold text-[#17384A]">
-                  Yamaha 130 HP
+                  Mercury EFI 115 Command Thrust
                 </div>
               </div>
 
@@ -94,14 +90,14 @@ export const BoatInfo = () => {
                   <IoIosSpeedometer className="text-2xl" />
                 </div>
                 <div className="text-sm text-slate-500">Max speed</div>
-                <div className="text-xl font-bold text-[#17384A]">35 mph</div>
+                <div className="text-xl font-bold text-[#17384A]">32 mph</div>
               </div>
 
               <div className="bg-slate-50 p-4 shadow-sm">
                 <div className="text-[#c79432] mb-2">
                   <IoIosSpeedometer className="text-2xl" />
                 </div>
-                <div className="text-sm text-slate-500">Cruse speed</div>
+                <div className="text-sm text-slate-500">Cruise speed</div>
                 <div className="text-xl font-bold text-[#17384A]">24 mph</div>
               </div>
 
@@ -110,7 +106,7 @@ export const BoatInfo = () => {
                   <BsFillFuelPumpFill className="text-2xl" />
                 </div>
                 <div className="text-sm text-slate-500">Fuel tank</div>
-                <div className="text-xl font-bold text-[#17384A]">140 l</div>
+                <div className="text-xl font-bold text-[#17384A]">160 l</div>
               </div>
 
               <div className="bg-slate-50 p-4 shadow-sm">
@@ -118,7 +114,7 @@ export const BoatInfo = () => {
                   <BsFillFuelPumpFill className="text-2xl" />
                 </div>
                 <div className="text-sm text-slate-500">Water tank</div>
-                <div className="text-xl font-bold text-[#17384A]">40 l</div>
+                <div className="text-xl font-bold text-[#17384A]">45 l</div>
               </div>
             </div>
 
@@ -193,7 +189,8 @@ export const BoatInfo = () => {
                     of the vessel.
                   </p>
                   <div className="text-3xl font-bold text-[#c79432] mb-4">
-                    €250<span className="text-sm text-slate-500">/day</span>
+                    from €200
+                    <span className="text-sm text-slate-500">/day</span>
                   </div>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center gap-2">
@@ -225,7 +222,8 @@ export const BoatInfo = () => {
                     the best spots.
                   </p>
                   <div className="text-3xl font-bold text-[#c79432] mb-4">
-                    €450<span className="text-sm text-slate-500">/day</span>
+                    from €400
+                    <span className="text-sm text-slate-500">/day</span>
                   </div>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center gap-2">

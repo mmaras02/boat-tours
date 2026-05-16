@@ -20,8 +20,6 @@ interface ImageCarouselProps {
   autoPlayMs?: number;
   className?: string;
   gap?: number;
-  width?: number;
-  height?: number;
   onClick?: (index: number) => void;
 }
 
@@ -31,8 +29,6 @@ export function ImageCarousel({
   autoPlayMs = 4000,
   className = '',
   gap = 16,
-  width,
-  height,
   onClick,
 }: ImageCarouselProps) {
   const safeCardsPerView = Math.max(1, cardsPerView);
@@ -77,20 +73,6 @@ export function ImageCarousel({
     setCurrentIndex((prev) => (prev + 1) % totalPositions);
   };
 
-  {
-    items.map((item, index) => {
-      console.log('Item:', item.title, item.description); // Check if data is coming through
-      return (
-        <article
-          key={item.key ?? `${item.title}-${index}`}
-          className="shrink-0 bg-white/95"
-        >
-          ...
-        </article>
-      );
-    });
-  }
-
   return (
     <div className={`w-full ${className}`}>
       <div className="relative overflow-hidden shadow-2xl">
@@ -103,7 +85,7 @@ export function ImageCarousel({
           {items.map((item, index) => (
             <article
               key={item.key ?? `${item.title}-${index}`}
-              className="shrink-0 bg-white/95"
+              className="shrink-0 overflow-hidden bg-white/95 flex flex-col"
               ref={(el) => {
                 if (el && index === 0) {
                   const width = el.getBoundingClientRect().width;
@@ -119,14 +101,16 @@ export function ImageCarousel({
                 width: `calc((100% - ${gap * (safeCardsPerView - 1)}px) / ${safeCardsPerView})`,
               }}
             >
-              <Image
-                src={item.image}
-                alt={item.title ?? 'carousel image'}
-                width={width || 300}
-                height={height || 300}
-                className="w-full object-cover cursor-pointer"
-                onClick={() => onClick?.(index)}
-              />
+              <div className="relative w-full h-56 sm:h-64 md:h-72 cursor-pointer">
+                <Image
+                  src={item.image}
+                  alt={item.title ?? 'carousel image'}
+                  fill
+                  sizes={`(max-width: 768px) 100vw, ${100 / safeCardsPerView}vw`}
+                  className="object-cover"
+                  onClick={() => onClick?.(index)}
+                />
+              </div>
 
               {item.title && item.description && (
                 <div className="p-4 md:p-5">

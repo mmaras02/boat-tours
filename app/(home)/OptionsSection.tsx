@@ -1,17 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 interface OptionsSectionProps {
   backgroundImage: string;
 }
 
 export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
-  const [selectedOption, setSelectedOption] = useState<
-    'bareboat' | 'captained'
-  >('bareboat');
-
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-slate-50 mt-2">
       <div
@@ -24,79 +19,27 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
       <div className="relative z-10 w-full px-6 lg:px-20 py-16">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white uppercase mb-4">
               Choose Your Rental Option
             </h2>
             <div className="w-24 h-1 bg-[#c79432] mx-auto"></div>
-          </motion.div>
-
-          {/* Option Toggle Buttons */}
-          <motion.div
-            className="flex justify-center gap-4 mb-12"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <button
-              onClick={() => setSelectedOption('bareboat')}
-              className={`px-8 py-3 text-lg font-semibold transition-all duration-300 ${
-                selectedOption === 'bareboat'
-                  ? 'bg-[#c79432] text-white shadow-lg scale-105'
-                  : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
-              }`}
-            >
-              No Skipper (Bareboat)
-            </button>
-            <button
-              onClick={() => setSelectedOption('captained')}
-              className={`px-8 py-3 text-lg font-semibold transition-all duration-300 ${
-                selectedOption === 'captained'
-                  ? 'bg-[#c79432] text-white shadow-lg scale-105'
-                  : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
-              }`}
-            >
-              With Skipper
-            </button>
-          </motion.div>
+          </div>
 
           {/* Content Cards */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {/* Bareboat Option */}
             <motion.div
-              className={`transition-all duration-500 ${
-                selectedOption === 'bareboat'
-                  ? 'scale-100 opacity-100'
-                  : 'scale-95 opacity-50 md:opacity-100'
-              }`}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div
-                className={`bg-white/10 backdrop-blur-sm border p-8 lg:p-10 h-full transition-all ${
-                  selectedOption === 'bareboat'
-                    ? 'border-[#c79432] shadow-2xl'
-                    : 'border-white/20'
-                }`}
-              >
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-10 h-full transition-all">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-white uppercase">
                     No Skipper
                   </h2>
-                  {selectedOption === 'bareboat' && (
-                    <span className="bg-[#c79432] text-white px-3 py-1 text-sm font-bold">
-                      SELECTED
-                    </span>
-                  )}
                 </div>
                 <div className="w-20 h-1 bg-[#c79432] mb-6"></div>
 
@@ -140,32 +83,16 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
             </motion.div>
 
             <motion.div
-              className={`transition-all duration-500 ${
-                selectedOption === 'captained'
-                  ? 'scale-100 opacity-100'
-                  : 'scale-95 opacity-50 md:opacity-100'
-              }`}
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               viewport={{ once: true }}
             >
-              <div
-                className={`bg-white/10 backdrop-blur-sm border p-8 lg:p-10 h-full transition-all ${
-                  selectedOption === 'captained'
-                    ? 'border-[#c79432] shadow-2xl'
-                    : 'border-white/20'
-                }`}
-              >
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-10 h-full transition-all">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-white uppercase">
                     With Skipper
                   </h2>
-                  {selectedOption === 'captained' && (
-                    <span className="bg-[#c79432] text-white px-3 py-1 text-sm font-bold">
-                      SELECTED
-                    </span>
-                  )}
                 </div>
                 <div className="w-20 h-1 bg-[#c79432] mb-6"></div>
 
@@ -209,13 +136,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
             </motion.div>
           </div>
 
-          <motion.div
-            className="mt-12 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div className="mt-12 text-center">
             <p className="text-white/80 text-sm">
               Both options include: Full insurance • Safety equipment •
               Snorkeling gear • Cooler box • First aid kit
@@ -225,7 +146,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
               <span>✓ Best price guarantee</span>
               <span>✓ Secure booking</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

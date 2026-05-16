@@ -16,7 +16,7 @@ export const ContactInfo = () => {
           <IoLocationOutline className="text-2xl text-accent shrink-0 mt-1" />
           <div>
             <p className="font-semibold">Our Address</p>
-            <p className="text-primary">Radovanova 10, Split, Croatia</p>
+            <p className="text-primary">Uvala Zenta (lučica), Split, Croatia</p>
           </div>
         </div>
 
@@ -33,7 +33,7 @@ export const ContactInfo = () => {
           <IoMdMailOpen className="text-xl text-accent shrink-0 mt-1" />
           <div>
             <p className="font-semibold">Email Us</p>
-            <p className="text-primary">rosaVentorum@gmail.com</p>
+            <p className="text-primary">ventiboat@gmail.com</p>
           </div>
         </div>
 
