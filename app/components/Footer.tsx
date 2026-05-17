@@ -63,17 +63,17 @@ export function Footer() {
               <FaFacebookF size={24} />
             </a>
             <a
-              href=""
+              href="https://www.instagram.com/ventiboat/"
               className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
             >
               <FaInstagram size={24} />
             </a>
-            <a
+            {/* <a
               href="#"
               className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
             >
               <FaTwitter size={24} />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -20,26 +20,31 @@ function processPage(
   pathname: string,
   onClick?: () => void,
   showDivider = true,
+  isMobile = false,
 ) {
   const isActive =
     page.path === '/' ? pathname === page.path : pathname.startsWith(page.path);
 
   return (
-    <div key={index} className="flex items-center">
+    <div
+      key={index}
+      className={
+        isMobile
+          ? `w-full border-b ${isActive ? 'border-[#c79432]' : 'border-white/20'}`
+          : 'relative flex items-center w-full'
+      }
+    >
       <Link
         href={page.path}
         onClick={onClick}
-        className={`transition-colors duration-200 px-2 py-1 block
-                ${
-                  isActive
-                    ? 'text-[#c79432] font-bold border-b-2 border-[#c79432]'
-                    : 'hover:text-[#c79432]'
-                }`}
+        className={`transition-all duration-200 block w-full ${
+          isMobile ? 'px-8 py-5 text-left' : 'px-2 py-1 relative'
+        } ${isActive ? 'text-[#c79432] font-bold' : 'hover:text-[#c79432]'}`}
       >
         {page.title}
       </Link>
 
-      {showDivider && index < pages.length - 1 && (
+      {showDivider && !isMobile && index < pages.length - 1 && (
         <div className="w-px h-4 bg-slate-50 mx-4 self-center"></div>
       )}
     </div>
@@ -67,11 +72,11 @@ export function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   const desktopNavItems = pages.map((page, index) =>
-    processPage(page, index, pathname),
+    processPage(page, index, pathname, undefined, true, false),
   );
 
   const mobileNavItems = pages.map((page, index) =>
-    processPage(page, index, pathname, closeMenu, false),
+    processPage(page, index, pathname, closeMenu, false, true),
   );
 
   useEffect(() => {
@@ -89,7 +94,7 @@ export function Navbar() {
   }, [isOpen, scrolled]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#0d3043]">
+    <header className="fixed top-0 left-0 w-full z-50 dark-background">
       <motion.nav
         style={{ background: gradient }}
         className="relative px-6 lg:px-8 py-6 text-white transition-colors duration-300"
@@ -120,10 +125,10 @@ export function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.5 }}
-            className="fixed top-18 left-0 w-full h-[calc(100vh-88px)] bg-slate-900 text-white z-40"
+            className="fixed top-[88px] left-0 w-full h-[calc(100vh-88px)] dark-background text-white z-40 overflow-y-auto"
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8 text-xl">
-              <ul className="flex flex-col items-center gap-6 text-lg">
+            <div className="flex flex-col items-start justify-start w-full">
+              <ul className="flex flex-col items-start w-full">
                 {mobileNavItems}
               </ul>
             </div>
