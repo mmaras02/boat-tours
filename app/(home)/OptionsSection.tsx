@@ -73,7 +73,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
 
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="#"
+                    href="/contact"
                     className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 text-sm font-semibold tracking-wide transition"
                   >
                     BOOK BAREBOAT
@@ -126,7 +126,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
 
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="#"
+                    href="/contact"
                     className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 text-sm font-semibold tracking-wide transition"
                   >
                     BOOK WITH SKIPPER

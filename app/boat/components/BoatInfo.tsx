@@ -31,10 +31,13 @@ export const BoatInfo = () => {
         </div>
 
         <div className="text-center">
-          <button className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold py-4 px-8 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <a
+            href="/contact"
+            className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold py-4 px-8 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
             BOOK THIS BOAT NOW
-          </button>
-          <p className="text-sm text-slate-400 mt-4">
+          </a>
+          <p className="text-sm text-slate-400 mt-6">
             Free cancellation up to 48 hours before departure
           </p>
         </div>
