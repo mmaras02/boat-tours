@@ -31,8 +31,8 @@ export const ContactInfo = () => {
           <FaPhoneAlt className="text-xl text-accent shrink-0 mt-1" />
           <div>
             <p className="font-semibold">Call Us</p>
-            <p className="text-primary">+385 99 306 1719</p>
             <p className="text-primary">+385 91 365 5852</p>
+            <p className="text-primary">+385 91 365 5951</p>
           </div>
         </div>
 

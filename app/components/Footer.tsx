@@ -26,7 +26,7 @@ export function Footer() {
               <CiLocationOn /> Uvala Zenta (lučica), Split, Croatia
             </li>
             <li className="flex items-center gap-2">
-              <FaPhoneAlt /> +385 99 306 1719
+              <FaPhoneAlt /> +385 91 365 5852 <br /> +385 91 365 5951
             </li>
             <li className="flex items-center gap-2">
               <IoMdMailOpen /> ventiboat@gmail.com
