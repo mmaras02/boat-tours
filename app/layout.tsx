@@ -20,7 +20,7 @@ const playfairDisplaySC = Playfair_Display_SC({
 });
 
 export const metadata: Metadata = {
-  title: 'Venti Boat - Luxury Boat Tours in Croatia | Private Yacht Charters',
+  title: 'Venti Boat - Rent a Boat in Croatia',
   description:
     'Experience unforgettable luxury boat tours in Croatia with Venti Boat. Rent a boat or book a private skipper to show you beautiful Croatia.',
   keywords: [
