@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { type Metadata } from 'next';
 import { Navbar } from './components/Navbar';
+import { Toaster } from 'react-hot-toast';
 
 import { Playfair_Display, Playfair_Display_SC } from 'next/font/google';
 import { Footer } from './components/Footer';
@@ -19,34 +19,24 @@ const playfairDisplaySC = Playfair_Display_SC({
   display: 'swap',
 });
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 export const metadata: Metadata = {
   title: 'Venti Boat - Luxury Boat Tours in Croatia | Private Yacht Charters',
   description:
-    'Experience unforgettable luxury boat tours in Croatia with Venti Boat. Private yacht charters, half-day and full-day tours, snorkeling, and gourmet experiences on the Adriatic Sea.',
+    'Experience unforgettable luxury boat tours in Croatia with Venti Boat. Rent a boat or book a private skipper to show you beautiful Croatia.',
   keywords: [
-    'boat tours Croatia',
+    'boat rental Croatia',
     'yacht charter',
-    'luxury boat tours',
-    'Adriatic Sea tours',
+    'rent a boat Croatia',
+    'luxury boat rent',
     'private boat tours',
     'Croatia sailing',
     'Venti Boat',
   ],
   authors: [{ name: 'Venti Boat' }],
   openGraph: {
-    title: 'Venti Boat - Luxury Boat Tours in Croatia',
+    title: 'Venti Boat - Boat rent in Croatia',
     description:
-      'Experience unforgettable luxury boat tours with private yacht charters and premium amenities on the Adriatic Sea.',
+      'Experience unforgettable boat rental experiences in Croatia with Venti Boat. Rent a boat or book a private skipper to show you beautiful Croatia.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Venti Boat',
@@ -74,6 +64,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <Toaster position="top-center" toastOptions={{ duration: 4000 }} />
         <Footer />
       </body>
     </html>

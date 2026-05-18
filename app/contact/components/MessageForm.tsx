@@ -1,5 +1,6 @@
-"use client";
+'use client';
 import { useState, FormEvent } from 'react';
+import toast from 'react-hot-toast';
 
 interface FormData {
   firstName: string;
@@ -23,12 +24,14 @@ export const MessageForm = () => {
     lastName: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -61,12 +64,13 @@ export const MessageForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error for this field when user starts typing
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
@@ -81,23 +85,35 @@ export const MessageForm = () => {
     setSubmitStatus('idle');
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      // Success!
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send a message!');
+      }
+
+      toast.success('Message sent successfully!');
+
       setSubmitStatus('success');
       setFormData({
         firstName: '',
         lastName: '',
         email: '',
         phone: '',
-        message: ''
+        message: '',
       });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       setSubmitStatus('error');
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : 'An unexpected error occurred. Please try again.',
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -105,9 +121,10 @@ export const MessageForm = () => {
 
   const inputClassName = (fieldName: keyof FormErrors) => `
     w-full px-2 py-2 border-2 bg-slate-50 transition-all outline-none
-    ${errors[fieldName]
-      ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
-      : 'border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20'
+    ${
+      errors[fieldName]
+        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
+        : 'border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20'
     }
   `;
 
@@ -115,17 +132,10 @@ export const MessageForm = () => {
     <div className="px-4 sm:px-6">
       <div className=" bg-slate-100 shadow-xl border-2 border-slate-200 p-6 md:p-12 border-l-4 border-accent">
         <div className="mb-10 text-start md:text-left">
-          <h2 className='text-2xl font-semibold'>Send us a message!</h2>
-          <p className='text-slate-500 text-base'>Fill out the form if you have any questions!</p>
-          {/* <h2
-            className="text-3xl md:text-4xl font-bold text-dark-slate mb-2"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Get In Touch
-          </h2>
-          <p className="text-gray-600 text-sm md:text-base">
-            We'd love to hear from you. Send us a message and we'll respond to you within 24 hours.
-          </p> */}
+          <h2 className="text-2xl font-semibold">Send us a message!</h2>
+          <p className="text-slate-500 text-base">
+            Fill out the form if you have any questions!
+          </p>
         </div>
 
         {submitStatus === 'success' && (
@@ -147,7 +157,10 @@ export const MessageForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6" noValidate>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-semibold text-dark-slate mb-1">
+              <label
+                htmlFor="firstName"
+                className="block text-sm font-semibold text-dark-slate mb-1"
+              >
                 First Name <span className="text-accent">*</span>
               </label>
               <input
@@ -159,18 +172,26 @@ export const MessageForm = () => {
                 className={inputClassName('firstName')}
                 placeholder="John"
                 aria-invalid={!!errors.firstName}
-                aria-describedby={errors.firstName ? 'firstName-error' : undefined}
+                aria-describedby={
+                  errors.firstName ? 'firstName-error' : undefined
+                }
                 disabled={isSubmitting}
               />
               {errors.firstName && (
-                <p id="firstName-error" className="mt-1 text-sm text-red-600 animate-slideDown">
+                <p
+                  id="firstName-error"
+                  className="mt-1 text-sm text-red-600 animate-slideDown"
+                >
                   {errors.firstName}
                 </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="lastName" className="block text-sm font-semibold text-dark-slate mb-1">
+              <label
+                htmlFor="lastName"
+                className="block text-sm font-semibold text-dark-slate mb-1"
+              >
                 Last Name <span className="text-accent">*</span>
               </label>
               <input
@@ -182,11 +203,16 @@ export const MessageForm = () => {
                 className={inputClassName('lastName')}
                 placeholder="Doe"
                 aria-invalid={!!errors.lastName}
-                aria-describedby={errors.lastName ? 'lastName-error' : undefined}
+                aria-describedby={
+                  errors.lastName ? 'lastName-error' : undefined
+                }
                 disabled={isSubmitting}
               />
               {errors.lastName && (
-                <p id="lastName-error" className="mt-1 text-sm text-red-600 animate-slideDown">
+                <p
+                  id="lastName-error"
+                  className="mt-1 text-sm text-red-600 animate-slideDown"
+                >
                   {errors.lastName}
                 </p>
               )}
@@ -194,7 +220,10 @@ export const MessageForm = () => {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="email" className="block text-sm font-semibold text-dark-slate mb-1">
+            <label
+              htmlFor="email"
+              className="block text-sm font-semibold text-dark-slate mb-1"
+            >
               Email Address <span className="text-accent">*</span>
             </label>
             <input
@@ -210,15 +239,24 @@ export const MessageForm = () => {
               disabled={isSubmitting}
             />
             {errors.email && (
-              <p id="email-error" className="mt-1 text-sm text-red-600 animate-slideDown">
+              <p
+                id="email-error"
+                className="mt-1 text-sm text-red-600 animate-slideDown"
+              >
                 {errors.email}
               </p>
             )}
           </div>
 
           <div className="mb-6">
-            <label htmlFor="phone" className="block text-sm font-semibold text-dark-slate mb-1">
-              Phone Number <span className="text-gray-400 text-xs font-normal">(optional)</span>
+            <label
+              htmlFor="phone"
+              className="block text-sm font-semibold text-dark-slate mb-1"
+            >
+              Phone Number{' '}
+              <span className="text-gray-400 text-xs font-normal">
+                (optional)
+              </span>
             </label>
             <input
               type="tel"
@@ -233,14 +271,20 @@ export const MessageForm = () => {
               disabled={isSubmitting}
             />
             {errors.phone && (
-              <p id="phone-error" className="mt-1 text-sm text-red-600 animate-slideDown">
+              <p
+                id="phone-error"
+                className="mt-1 text-sm text-red-600 animate-slideDown"
+              >
                 {errors.phone}
               </p>
             )}
           </div>
 
           <div className="mb-6">
-            <label htmlFor="message" className="block text-sm font-semibold text-dark-slate mb-1">
+            <label
+              htmlFor="message"
+              className="block text-sm font-semibold text-dark-slate mb-1"
+            >
               Message <span className="text-accent">*</span>
             </label>
             <textarea
@@ -256,7 +300,10 @@ export const MessageForm = () => {
               disabled={isSubmitting}
             />
             {errors.message && (
-              <p id="message-error" className="mt-1 text-sm text-red-600 animate-slideDown">
+              <p
+                id="message-error"
+                className="mt-1 text-sm text-red-600 animate-slideDown"
+              >
                 {errors.message}
               </p>
             )}
@@ -271,17 +318,34 @@ export const MessageForm = () => {
             className={`
               w-full bg-accent text-white font-semibold py-3 px-6 
               transition-all duration-300 shadow-md hover:shadow-lg text-lg mt-2
-              ${isSubmitting
-                ? 'opacity-75 cursor-not-allowed bg-accent/80'
-                : 'hover:bg-accent-hover transform hover:-translate-y-0.5'
+              ${
+                isSubmitting
+                  ? 'opacity-75 cursor-not-allowed bg-accent/80'
+                  : 'hover:bg-accent-hover transform hover:-translate-y-0.5'
               }
             `}
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <svg
+                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
                 </svg>
                 Sending...
               </span>
