@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import { DestinationCard } from './DestinationCard';
-import { destinations } from '../constants/destinations';
 
 interface HeroButton {
   text: string;
@@ -15,7 +13,6 @@ interface HeroProps {
   title: string;
   description: ReactNode;
   buttons?: HeroButton[];
-  isFirst?: boolean;
 }
 
 export const Hero = ({
@@ -23,12 +20,9 @@ export const Hero = ({
   title,
   description,
   buttons = [],
-  isFirst = true,
 }: HeroProps) => {
   return (
-    <section
-      className={`relative w-full overflow-hidden flex items-center ${isFirst ? 'min-h-[calc(100vh-5rem)]' : 'min-h-[76vh]'}`}
-    >
+    <section className="relative w-full overflow-hidden flex items-center min-h-[calc(100vh-5rem)]">
       <img
         src={image}
         alt="Hero image"
@@ -36,16 +30,12 @@ export const Hero = ({
       />
       <div className="absolute inset-0 bg-linear-to-r from-[#0b4f5a]/80 via-[#0b4f5a]/50 to-[#0b4f5a]/30" />
 
-      <div className="relative z-10 w-full max-w-7xl m-auto lg:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-8 items-center">
+      <div className="relative z-10 w-full max-w-7xl m-auto p-10 lg:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-8 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className={
-            isFirst
-              ? 'md:col-span-5 text-white'
-              : 'md:col-span-12 text-white text-center max-w-3xl mx-auto'
-          }
+          className="md:col-span-5 text-white text-center md:text-left"
         >
           <p className="text-sm tracking-[0.35em] uppercase text-slate-200 mb-3 text-accent">
             Venti Boat
@@ -53,47 +43,19 @@ export const Hero = ({
           <h1 className="font-extrabold uppercase leading-[0.95] text-4xl sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p
-            className={`mt-4 text-slate-200/95 text-sm sm:text-base leading-relaxed ${isFirst ? 'max-w-md' : 'max-w-2xl mx-auto'}`}
-          >
+          <p className="mt-4 text-slate-200/95 text-sm sm:text-base leading-relaxed max-w-md mx-auto md:mx-0">
             {description}
           </p>
 
-          <div
-            className={`mt-7 flex items-center gap-5 ${isFirst ? '' : 'justify-center'}`}
-          >
+          <div className="mt-7 text-center md:text-left">
             <a
-              href="#"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 font-semibold tracking-wide transition"
             >
               BOOK NOW
             </a>
-            {/* <div className="hidden sm:flex items-center gap-2 text-slate-100/80 text-lg">
-                            <span>◀</span>
-                            <span>◀</span>
-                            <span>◀</span>
-                            <span>◀</span>
-                        </div> */}
           </div>
         </motion.div>
-
-        {/* {isFirst ? (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="md:col-span-7 grid sm:grid-cols-3 gap-4 mt-30"
-          >
-            {destinations.slice(0, 3).map((card) => (
-              <DestinationCard
-                key={card.title}
-                image={card.image}
-                title={card.title}
-                text={card.description}
-              />
-            ))}
-          </motion.div>
-        ) : null} */}
       </div>
     </section>
   );

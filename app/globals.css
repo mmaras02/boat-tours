@@ -41,6 +41,18 @@
   }
 } */
 
+/* In your global.css or similar */
+/* In your global.css or app.css */
+.about-image {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (min-width: 768px) {
+  .about-image {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  }
+}
+
 body {
   font-family: 'Playfair Display', serif;
 }

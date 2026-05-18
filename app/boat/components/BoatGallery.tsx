@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { boat } from '@/app/constants/boat';
@@ -10,7 +12,7 @@ export const BoatGallery = () => {
   return (
     <>
       <div className="max-w-4xl mx-auto">
-        <div className="flex justify-center shadow-xl">
+        <div className="hidden md:flex justify-center shadow-xl">
           <Image
             src="/images/boat/2.png"
             alt="Boat image"

@@ -32,10 +32,23 @@ export function ImageCarousel({
   onClick,
 }: ImageCarouselProps) {
   const safeCardsPerView = Math.max(1, cardsPerView);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+    const updateMatch = () => setIsMobile(mediaQuery.matches);
+    updateMatch();
+
+    mediaQuery.addEventListener('change', updateMatch);
+    return () => mediaQuery.removeEventListener('change', updateMatch);
+  }, []);
+
+  const effectiveCardsPerView = isMobile ? 1 : safeCardsPerView;
 
   const maxStartIndex = useMemo(
-    () => Math.max(0, items.length - safeCardsPerView),
-    [items.length, safeCardsPerView],
+    () => Math.max(0, items.length - effectiveCardsPerView),
+    [items.length, effectiveCardsPerView],
   );
 
   const totalPositions = maxStartIndex + 1;
@@ -98,7 +111,7 @@ export function ImageCarousel({
                 }
               }}
               style={{
-                width: `calc((100% - ${gap * (safeCardsPerView - 1)}px) / ${safeCardsPerView})`,
+                width: `calc((100% - ${gap * (effectiveCardsPerView - 1)}px) / ${effectiveCardsPerView})`,
               }}
             >
               <div className="relative w-full h-56 sm:h-64 md:h-72 cursor-pointer">
@@ -106,7 +119,7 @@ export function ImageCarousel({
                   src={item.image}
                   alt={item.title ?? 'carousel image'}
                   fill
-                  sizes={`(max-width: 768px) 100vw, ${100 / safeCardsPerView}vw`}
+                  sizes={`(max-width: 768px) 100vw, ${100 / effectiveCardsPerView}vw`}
                   className="object-cover"
                   onClick={() => onClick?.(index)}
                 />

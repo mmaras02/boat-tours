@@ -97,11 +97,11 @@ export function Navbar() {
     <header className="fixed top-0 left-0 w-full z-50 dark-background">
       <motion.nav
         style={{ background: gradient }}
-        className="relative px-6 lg:px-8 py-6 text-white transition-colors duration-300"
+        className="relative z-50 px-6 lg:px-8 py-6 text-white transition-colors duration-300"
       >
         <div className="relative z-10 w-full flex items-center justify-between lg:flex-col lg:gap-7">
           <Link href="/" className="text-2xl lg:text-3xl font-bold">
-            <h2 className="border-b border-blue-200 px-4 lg:px-25">
+            <h2 className="border-b border-blue-200 px-4 lg:px-24">
               Venti Boat
             </h2>
           </Link>
@@ -125,7 +125,7 @@ export function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.5 }}
-            className="fixed top-[88px] left-0 w-full h-[calc(100vh-88px)] dark-background text-white z-40 overflow-y-auto"
+            className="fixed top-20 left-0 w-full h-[calc(100dvh-5rem)] z-40 overflow-y-auto dark-background text-white"
           >
             <div className="flex flex-col items-start justify-start w-full">
               <ul className="flex flex-col items-start w-full">

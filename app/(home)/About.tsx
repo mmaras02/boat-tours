@@ -4,7 +4,10 @@ import { boat } from '../constants/boat';
 
 const DisplayStats = ({ stat, idx }: { stat: any; idx: number }) => {
   return (
-    <div key={idx} className="flex flex-col p-5">
+    <div
+      key={idx}
+      className="flex flex-col p-5 border-b border-slate-300 last:border-b-0 md:border-b-0 md:[&:nth-child(3)]:border-b-0"
+    >
       <p className="text-accent font-bold text-2xl">
         {boat.specifications[stat.valueKey as keyof typeof boat.specifications]}
       </p>
@@ -18,7 +21,7 @@ export const About = () => {
     <section className="bg-slate-50 mt-2 overflow-hidden">
       <div className="w-full grid grid-cols-1 md:grid-cols-5 items-center">
         <motion.div
-          className="relative h-100 md:h-125 w-full md:col-span-2"
+          className="relative h-100 md:h-125 w-full md:col-span-2 mb-10 md:mb-0"
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -27,15 +30,12 @@ export const About = () => {
           <img
             src={boat.images[0]}
             alt={boat.name}
-            className="w-full h-full object-cover"
-            style={{
-              clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0% 100%)',
-            }}
+            className="w-full h-full object-cover about-image"
           />
         </motion.div>
 
         <motion.div
-          className="px-8 lg:px-16 xl:px-24 md:col-span-3"
+          className="px-8 lg:px-16 md:col-span-3"
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -53,18 +53,20 @@ export const About = () => {
             {boat.aboutDescription}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-b-2 border-t-2 border-slate-300">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-b-2 border-t-2 border-slate-300 divide-y divide-slate-300 md:divide-y-0">
             {boat.stats.map((stat, idx) => (
               <DisplayStats key={idx} stat={stat} idx={idx} />
             ))}
           </div>
 
-          <Link
-            href="/boat"
-            className="inline-block mt-8 bg-[#c79432] text-white font-bold px-6 py-3 hover:bg-[#b5842c] transition-colors duration-300"
-          >
-            More Details
-          </Link>
+          <div className="flex justify-center md:block">
+            <Link
+              href="/boat"
+              className="inline-block mt-8 mb-10 md:mb-0 bg-[#c79432] text-white font-bold px-6 py-3 hover:bg-[#b5842c] transition-colors duration-300 text-center"
+            >
+              More Details
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

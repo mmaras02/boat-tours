@@ -9,12 +9,14 @@ import { IoLocationOutline } from 'react-icons/io5';
 
 export const ContactInfo = () => {
   return (
-    <div className="p-8 w-full max-w-md">
-      <h3 className="text-2xl font-bold mb-2">Contact us!</h3>
-      <p className="mb-10">
-        Book your boat from Split to most popular islands and caves with the
-        best value for money and price guarantee.
-      </p>
+    <div className="pl-8 md:p-8 w-full max-w-md">
+      <div className="hidden md:block">
+        <h3 className="text-2xl font-bold mb-2">Contact us!</h3>
+        <p className="mb-10 ">
+          Book your boat from Split to most popular islands and caves with the
+          best value for money and price guarantee.
+        </p>
+      </div>
 
       <div className="flex flex-col gap-6">
         <div className="flex gap-3 items-start">

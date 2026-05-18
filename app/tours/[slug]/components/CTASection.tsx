@@ -18,13 +18,13 @@ export const CTASection = () => {
           Ready for Your Dalmatian Adventure?
         </h2>
         <p className="text-white/80 mb-8 max-w-2xl mx-auto text-lg">
-          Contact us to book this tour or create a custom itinerary tailored to
+          Contact us to book this boat and create a custom itinerary tailored to
           your preferences.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
             href="/contact"
-            className="group/btn inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-8 py-4 font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5"
+            className="group/btn inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-8 py-4 font-semibold transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5"
           >
             <span>Contact Us Now</span>
             <span className="group-hover/btn:translate-x-1 transition-transform duration-300">

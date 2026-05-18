@@ -4,7 +4,7 @@ import { MessageForm } from './components/MessageForm';
 
 export default function ContactPage() {
   return (
-    <main className="relative pt-35 min-h-screen bg-slate-100">
+    <main className="relative pt-20 md:pt-35 min-h-screen bg-slate-100">
       <div className="flex flex-col items-center">
         <div className="inline-block">
           <h1 className="text-3xl pt-10 md:text-4xl font-bold text-dark-slate mb-1">
@@ -18,7 +18,7 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-8 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-evenly md:items-start gap-8 md:gap-0">
         <div className="flex justify-center w-full md:w-auto">
           <ContactInfo />
         </div>

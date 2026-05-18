@@ -13,7 +13,7 @@ export default function Home() {
       <Hero
         image="/hero.avif"
         title="Welcome to Venti Boat"
-        description="Experience unforgettable boat tours with us!"
+        description="Experience unforgettable boat ride with us!"
       />
 
       <About />
