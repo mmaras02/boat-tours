@@ -2,7 +2,7 @@ interface OptionCardProps {
   type: 'withSkipper' | 'withoutSkipper';
   data: {
     description: string;
-    price: string;
+    price: number;
     features: string[];
   };
 }
@@ -16,7 +16,9 @@ export const OptionCard = ({ type, data }: OptionCardProps) => {
         Rent {isWithSkipper ? 'With' : 'Without'} Skipper
       </h4>
       <p className="text-slate-600 mb-4">{data.description}</p>
-      <div className="text-3xl font-bold text-[#c79432] mb-4">{data.price}</div>
+      <div className="text-3xl font-bold text-[#c79432] mb-4">
+        from {data.price} €/day
+      </div>
       <ul className="space-y-2 text-slate-600">
         {data.features.map((feature, idx) => (
           <li key={idx} className="flex items-center gap-2">

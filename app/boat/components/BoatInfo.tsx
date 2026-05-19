@@ -3,6 +3,9 @@
 import { BoatSpecifications } from './BoatSpecifications';
 import { boat } from '@/app/constants/boat';
 import { RentalOptions } from './RentalOptions';
+import { Dropdown } from '@/app/components/Dropdown';
+import { PricingInfo } from './PricingInfo/PricingInfo';
+import { IncludedItemsDropdown } from './IncludedItemsDropdown';
 
 export const BoatInfo = () => {
   return (
@@ -13,24 +16,16 @@ export const BoatInfo = () => {
 
           <div>
             <RentalOptions />
-
-            <div className="mt-8 bg-slate-50 p-6 shadow-md">
-              <h4 className="font-bold text-[#17384A] mb-3">
-                What's Included:
-              </h4>
-              <div className="grid grid-cols-2 gap-2 text-sm text-slate-600">
-                <div>✓ Full insurance</div>
-                <div>✓ Safety equipment</div>
-                <div>✓ Towels</div>
-                <div>✓ Snorkeling gear</div>
-                <div>✓ Cooler box</div>
-                <div>✓ First aid kit</div>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="text-center">
+        <Dropdown title="What is Included">
+          <IncludedItemsDropdown />
+        </Dropdown>
+
+        <PricingInfo />
+
+        <div className="text-center mt-20">
           <a
             href="/contact"
             className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold py-4 px-8 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"

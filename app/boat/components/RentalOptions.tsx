@@ -25,7 +25,7 @@ const ToggleButton = ({ active, onClick, children }: ToggleButtonProps) => (
 export const RentalOptions = () => {
   const [rentalType, setRentalType] = useState<
     'withSkipper' | 'withoutSkipper'
-  >('withSkipper');
+  >('withoutSkipper');
   return (
     <div>
       <SectionHeader title="Rental Options" />

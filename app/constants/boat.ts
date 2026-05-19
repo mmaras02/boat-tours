@@ -30,7 +30,7 @@ export const boat = {
   },
   pricing: {
     withSkipper: {
-      price: '€400 per day',
+      price: 320,
       description:
         'Sit back and relax while our experienced skipper navigates the best spots.',
       features: [
@@ -42,7 +42,7 @@ export const boat = {
       ],
     },
     withoutSkipper: {
-      price: '€200 per day',
+      price: 200,
       description:
         'Perfect for experienced captains. You will have full control of the vessel.',
       features: [
@@ -92,5 +92,28 @@ export const boat = {
     { label: 'Top Speed', valueKey: 'maxSpeed' },
     { label: 'Length', valueKey: 'length' },
     { label: 'Engine Power', valueKey: 'enginePower' },
+  ],
+
+  // constants/boat.ts - dodaj ovo
+
+  seasonalPricing: [
+    {
+      season: 'Low Season',
+      months: 'Jan, Feb, Mar, April, May, Oct, Nov, Dec',
+      priceWithoutSkipper: '€200',
+      priceWithSkipper: '€270',
+    },
+    {
+      season: 'High Season',
+      months: 'Jun, Sep',
+      priceWithoutSkipper: '€250',
+      priceWithSkipper: '€400',
+    },
+    {
+      season: 'Peak Season',
+      months: 'Jul, Aug',
+      priceWithoutSkipper: '€280',
+      priceWithSkipper: '€470',
+    },
   ],
 };
