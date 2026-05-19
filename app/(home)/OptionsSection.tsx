@@ -44,7 +44,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
                 <div className="w-20 h-1 bg-[#c79432] mb-6"></div>
 
                 <div className="text-3xl font-bold text-[#c79432] mb-6">
-                  €250<span className="text-white text-sm">/day</span>
+                  from 200€<span className="text-white text-sm">/day</span>
                 </div>
 
                 <p className="text-slate-200 text-sm leading-relaxed mb-6">
@@ -97,7 +97,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
                 <div className="w-20 h-1 bg-[#c79432] mb-6"></div>
 
                 <div className="text-3xl font-bold text-[#c79432] mb-6">
-                  €450<span className="text-white text-sm">/day</span>
+                  from 320€<span className="text-white text-sm">/day</span>
                 </div>
 
                 <p className="text-slate-200 text-sm leading-relaxed mb-6">
