@@ -22,7 +22,7 @@ export const Hero = ({
   buttons = [],
 }: HeroProps) => {
   return (
-    <section className="relative w-full overflow-hidden flex items-center min-h-[calc(100vh-5rem)]">
+    <section className="relative w-full overflow-hidden flex items-start md:items-center min-h-[calc(100vh-5rem)]">
       <img
         src={image}
         alt="Hero image"
@@ -30,12 +30,12 @@ export const Hero = ({
       />
       <div className="absolute inset-0 bg-linear-to-r from-[#0b4f5a]/80 via-[#0b4f5a]/50 to-[#0b4f5a]/30" />
 
-      <div className="relative z-10 w-full max-w-7xl m-auto p-10 lg:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-8 items-center">
+      <div className="relative pt-15 z-10 w-full max-w-7xl mx-auto px-10 lg:px-10 py-6 md:py-16 grid md:grid-cols-12 gap-8 items-start md:items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="md:col-span-5 text-white text-center md:text-left"
+          className="md:col-span-5 text-white text-center md:text-left mx-auto md:mx-0"
         >
           <p className="text-sm tracking-[0.35em] uppercase text-slate-200 mb-3 text-accent">
             Venti Boat

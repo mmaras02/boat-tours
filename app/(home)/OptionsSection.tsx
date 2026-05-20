@@ -18,7 +18,6 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
 
       <div className="relative z-10 w-full px-6 lg:px-20 py-16">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white uppercase mb-4">
               Choose Your Rental Option
@@ -26,9 +25,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
             <div className="w-24 h-1 bg-[#c79432] mx-auto"></div>
           </div>
 
-          {/* Content Cards */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Bareboat Option */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

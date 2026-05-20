@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { SectionHeader } from './SectionHeader';
 import { boat } from '@/app/constants/boat';
 import { OptionCard } from './OptionCard';
+import { SectionTitle } from '@/app/components/SectionTitle';
 
 interface ToggleButtonProps {
   active: boolean;
@@ -28,7 +28,7 @@ export const RentalOptions = () => {
   >('withoutSkipper');
   return (
     <div>
-      <SectionHeader title="Rental Options" />
+      <SectionTitle title="Rental Options" size="lg" />
       <div className="p-1 mb-8 flex gap-1">
         <ToggleButton
           active={rentalType === 'withoutSkipper'}

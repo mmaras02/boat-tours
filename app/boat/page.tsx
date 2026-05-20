@@ -1,8 +1,8 @@
 'use client';
 
-import { BoatInfo } from './components/BoatInfo';
+import { BoatInfo } from './components/BoatInfo/BoatInfo';
 import { boat } from '../constants/boat';
-import { BoatGallery } from './components/BoatGallery';
+import { BoatGallery } from './components/BoatInfo/BoatGallery';
 
 export default function BoatPage() {
   return (

@@ -93,27 +93,4 @@ export const boat = {
     { label: 'Length', valueKey: 'length' },
     { label: 'Engine Power', valueKey: 'enginePower' },
   ],
-
-  // constants/boat.ts - dodaj ovo
-
-  seasonalPricing: [
-    {
-      season: 'Low Season',
-      months: 'Jan, Feb, Mar, April, May, Oct, Nov, Dec',
-      priceWithoutSkipper: '€200',
-      priceWithSkipper: '€270',
-    },
-    {
-      season: 'High Season',
-      months: 'Jun, Sep',
-      priceWithoutSkipper: '€250',
-      priceWithSkipper: '€400',
-    },
-    {
-      season: 'Peak Season',
-      months: 'Jul, Aug',
-      priceWithoutSkipper: '€280',
-      priceWithSkipper: '€470',
-    },
-  ],
 };

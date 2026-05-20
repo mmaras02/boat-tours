@@ -1,5 +1,3 @@
-// constants/pricing.ts
-
 export const pricingData = {
   seasonalPricing: [
     {
