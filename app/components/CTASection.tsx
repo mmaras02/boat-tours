@@ -5,7 +5,7 @@ export const CTASection = () => {
   return (
     <section className="relative mt-2 py-10 overflow-hidden">
       <Image
-        src="/hero.avif"
+        src="/images/hero.avif"
         alt="Dalmatian coast boat tour"
         fill
         className="object-cover"
