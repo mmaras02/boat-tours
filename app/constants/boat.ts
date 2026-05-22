@@ -1,10 +1,10 @@
 export const boat = {
   name: 'Quicksilver Active 605 Open',
   description:
-    'Comfort, family-friendly motorboat with ideal balance of sporty performance, practicality and sefety for a whole day leisure on the sea. The Boat of the Year 2017 by Moteur Boat Magazine makes best in the category of storage capacities and intelligent use of space, best access from water to cockpit and outstandingly low fuel consumption with the new Mercury EFI 115 CT engine.',
+    'Comfort, family-friendly motorboat with ideal balance of sporty performance, practicality and sefety for a whole day leisure on the sea. The Boat of the Year 2017 by Moteur Boat Magazine makes best in the category of storage capacities and intelligent use of space, best access from water to cockpit and outstanding low fuel consumption with the new Mercury EFI 115 CT engine.',
   aboutDescription: `The Venti Boat is a fast and comfortable motorboat designed for
     exploring the beautiful Dalmatian coastline and nearby islands.
-    Perfect for private tours and small groups, it offers a smooth ride,
+    Perfect for small groups, it offers a smooth ride,
     modern design, and everything needed for a relaxing day at sea.`,
   features: [
     'Spacious deck with sun loungers',
@@ -20,9 +20,9 @@ export const boat = {
   specifications: {
     length: '6.46 m',
     width: '2.4 m',
-    engine: 'Mercury EFI 115 Command Thrust',
+    engine: 'Mercury EFI 115 CT',
     enginePower: '115 HP',
-    maxSpeed: '27.8 knots',
+    maxSpeed: '32 knots',
     cruisingSpeed: '20 knots',
     fuelCapacity: '160 l',
     waterCapacity: '45 l',
@@ -32,10 +32,9 @@ export const boat = {
     withSkipper: {
       price: 320,
       description:
-        'Sit back and relax while our experienced skipper navigates the best spots.',
+        'Sit back and relax while our experienced skipper navigates spots according to your preferences.',
       features: [
-        'Professional licensed skipper',
-        'Fuel included',
+        'Licensed skipper',
         'Local knowledge of hidden gems',
         'No license required',
         'Security deposit: €300',
@@ -47,8 +46,8 @@ export const boat = {
         'Perfect for experienced captains. You will have full control of the vessel.',
       features: [
         'License required (Category B)',
-        'Boat has to be retuned with full fuel tank',
-        'Free cancellation 48h prior',
+        // 'Boat has to be retuned with full fuel tank',
+        'Free cancellation 7 days prior',
         'Security deposit: €800',
       ],
     },

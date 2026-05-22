@@ -44,14 +44,14 @@ export const ContactInfo = () => {
           </div>
         </div>
 
-        <div className="flex gap-3 items-start">
+        {/* <div className="flex gap-3 items-start">
           <FaRegClock className="text-xl text-accent shrink-0 mt-1" />
           <div>
             <p className="font-semibold">Working Hours</p>
             <p className="text-primary">Mon–Sat: 08:00–20:00</p>
             <p className="text-primary">Sun: 09:00–18:00</p>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex gap-3 items-start">
           <div>

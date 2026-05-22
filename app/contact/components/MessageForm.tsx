@@ -170,7 +170,7 @@ export const MessageForm = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 className={inputClassName('firstName')}
-                placeholder="John"
+                placeholder="First name"
                 aria-invalid={!!errors.firstName}
                 aria-describedby={
                   errors.firstName ? 'firstName-error' : undefined
@@ -201,7 +201,7 @@ export const MessageForm = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 className={inputClassName('lastName')}
-                placeholder="Doe"
+                placeholder="Last name"
                 aria-invalid={!!errors.lastName}
                 aria-describedby={
                   errors.lastName ? 'lastName-error' : undefined
@@ -265,7 +265,7 @@ export const MessageForm = () => {
               value={formData.phone}
               onChange={handleChange}
               className={inputClassName('phone')}
-              placeholder="+1 (555) 000-0000"
+              placeholder="Phone number"
               aria-invalid={!!errors.phone}
               aria-describedby={errors.phone ? 'phone-error' : undefined}
               disabled={isSubmitting}

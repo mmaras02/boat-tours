@@ -54,17 +54,17 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
                     <span className="text-[#c79432] text-xl">●</span>
                     <span>License required (Category B)</span>
                   </li>
-                  <li className="flex items-center gap-3">
+                  {/* <li className="flex items-center gap-3">
                     <span className="text-[#c79432] text-xl">●</span>
                     <span>Fuel included up to 10L/hour</span>
+                  </li> */}
+                  <li className="flex items-center gap-3">
+                    <span className="text-[#c79432] text-xl">●</span>
+                    <span>Security deposit: 800 €</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="text-[#c79432] text-xl">●</span>
-                    <span>Security deposit: €500</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Free cancellation 48h prior</span>
+                    <span>Free cancellation 7 days prior</span>
                   </li>
                 </ul>
 
@@ -105,16 +105,16 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
                 <ul className="space-y-3 mb-8 text-slate-200 text-sm">
                   <li className="flex items-center gap-3">
                     <span className="text-[#c79432] text-xl">●</span>
-                    <span>Professional licensed skipper</span>
+                    <span>Licensed skipper</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="text-[#c79432] text-xl">●</span>
-                    <span>No license required</span>
+                    <span>Security deposit: 300 €</span>
                   </li>
-                  <li className="flex items-center gap-3">
+                  {/* <li className="flex items-center gap-3">
                     <span className="text-[#c79432] text-xl">●</span>
                     <span>Learn sailing basics</span>
-                  </li>
+                  </li> */}
                   <li className="flex items-center gap-3">
                     <span className="text-[#c79432] text-xl">●</span>
                     <span>Local knowledge of hidden gems</span>
@@ -139,7 +139,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
               Snorkeling gear • Cooler box • First aid kit
             </p>
             <div className="flex justify-center gap-6 mt-6 text-white text-xs">
-              <span>✓ Free cancellation up to 48h before departure</span>
+              <span>✓ Free cancellation up to 7 days before departure</span>
               <span>✓ Best price guarantee</span>
               <span>✓ Secure booking</span>
             </div>

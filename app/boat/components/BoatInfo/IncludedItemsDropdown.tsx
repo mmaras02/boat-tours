@@ -1,7 +1,6 @@
 const items: string[] = [
   'Full insurance',
   'Safety equipment',
-  'Towels',
   'Snorkeling gear',
   'Cooler box',
   'First aid kit',

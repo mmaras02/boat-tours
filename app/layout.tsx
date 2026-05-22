@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     'rent a boat Croatia',
     'luxury boat rent',
     'private boat tours',
-    'Croatia sailing',
+    'Croatia boat hire',
     'Venti Boat',
   ],
   authors: [{ name: 'Venti Boat' }],

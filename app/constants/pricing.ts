@@ -7,13 +7,13 @@ export const pricingData = {
       priceWithSkipper: 320,
     },
     {
-      season: 'High Season',
+      season: 'Mid Season',
       months: 'Jun, Sep',
       priceWithoutSkipper: 250,
       priceWithSkipper: 370,
     },
     {
-      season: 'Peak Season',
+      season: 'High Season',
       months: 'Jul, Aug',
       priceWithoutSkipper: 280,
       priceWithSkipper: 400,
@@ -26,22 +26,23 @@ export const pricingData = {
         'When booking directly through our website (no commission fees)',
       amount: '-10%',
     },
+    // {
+    //   name: 'Early Booking',
+    //   description: 'For reservations made at least 30 days before departure',
+    //   amount: '-15%',
+    // },
     {
-      name: 'Early Booking',
-      description: 'For reservations made at least 30 days before departure',
+      name: 'Weekly Special',
+      description:
+        'For one week rentals, we offer one day free (7 days for the price of 6)',
       amount: '-15%',
-    },
-    {
-      name: 'Weekday Special',
-      description: 'For rentals Monday to Friday',
-      amount: '-10%',
     },
   ],
 
   cancellationPolicy: {
-    freeCancellation: '2 days before rental date',
+    freeCancellation: '7 days before rental date',
     partialRefund:
-      'Cancellation 2 days or less before rental date - deposit is retained',
+      'Cancellation 7 days or less before rental date - deposit is retained',
   },
 
   rentalTerms: {
@@ -52,18 +53,17 @@ export const pricingData = {
       'Rental must be paid in advance',
     ],
     prohibitedActions: [
-      'Speeding (planing) less than 300 meters from the shore',
+      'Speeding less than 300 meters from the shore',
       'Operating the boat under the influence of alcohol or drugs',
     ],
     weatherPolicy:
-      'In case of extremely bad weather, we reserve the right not to allow the boat to sail to protect passengers and property. In this case, the renter is entitled to a full refund.',
+      'In case of extremely bad weather, we reserve the right not to allow the rental of the boat, in order to protect passengers and property.',
     responsibility:
-      'The boat is always rented to the renter at their own responsibility, which is established by signing a rental agreement before sailing.',
+      'The boat is always rented to the renter at their own responsibility, which is established by signing a rental agreement.',
     miscellaneous: [
       'Upon request, reservations can be transferred to the next available date',
-      'Renter must have a mobile phone during the rental period and be contactable if needed',
+      'Renter is advised to have a mobile phone during the rental period and be contactable if needed',
       'In case of any problem, the renter must immediately notify the owner via the phone number provided during contract signing',
-      'In case of a serious accident endangering human lives or serious material damage, the renter must call the police or other appropriate services',
     ],
   },
 };

@@ -33,7 +33,7 @@ export const BoatInfo = () => {
             BOOK THIS BOAT NOW
           </a>
           <p className="text-sm text-slate-400 mt-6">
-            Free cancellation up to 48 hours before departure
+            Free cancellation up to 7 days before departure
           </p>
         </div>
       </div>

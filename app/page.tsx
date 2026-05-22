@@ -12,7 +12,7 @@ export default function Home() {
       <Hero
         image="/images/hero.jpg"
         title="Welcome to Venti Boat"
-        description="Experience unforgettable boat ride with us!"
+        description="Experience unforgettable boat ride with our boat!"
       />
 
       <About />
