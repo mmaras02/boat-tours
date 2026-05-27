@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { boat } from '../constants/boat';
+import { OptionCard } from '../components/OptionCard';
 
 interface OptionsSectionProps {
   backgroundImage: string;
@@ -26,125 +27,22 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-10 h-full transition-all">
-                <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white uppercase">
-                    No Skipper
-                  </h2>
-                </div>
-                <div className="w-20 h-1 bg-[#c79432] mb-6"></div>
-
-                <div className="text-3xl font-bold text-[#c79432] mb-6">
-                  from 200€<span className="text-white text-sm">/day</span>
-                </div>
-
-                <p className="text-slate-200 text-sm leading-relaxed mb-6">
-                  Perfect for experienced captains. Take full control of the
-                  vessel and explore at your own pace.
-                </p>
-
-                <ul className="space-y-3 mb-8 text-slate-200 text-sm">
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>License required (Category B)</span>
-                  </li>
-                  {/* <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Fuel included up to 10L/hour</span>
-                  </li> */}
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Security deposit: 800 €</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Free cancellation 7 days prior</span>
-                  </li>
-                </ul>
-
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="/contact"
-                    aria-label="Contact VentiBoat to book the bareboat rental option"
-                    className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 text-sm font-semibold tracking-wide transition"
-                  >
-                    BOOK BAREBOAT
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-10 h-full transition-all">
-                <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white uppercase">
-                    With Skipper
-                  </h2>
-                </div>
-                <div className="w-20 h-1 bg-[#c79432] mb-6"></div>
-
-                <div className="text-3xl font-bold text-[#c79432] mb-6">
-                  from 320€<span className="text-white text-sm">/day</span>
-                </div>
-
-                <p className="text-slate-200 text-sm leading-relaxed mb-6">
-                  Sit back and relax while our experienced skipper navigates the
-                  best spots and hidden gems.
-                </p>
-
-                <ul className="space-y-3 mb-8 text-slate-200 text-sm">
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Licensed skipper</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Security deposit: 300 €</span>
-                  </li>
-                  {/* <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Learn sailing basics</span>
-                  </li> */}
-                  <li className="flex items-center gap-3">
-                    <span className="text-[#c79432] text-xl">●</span>
-                    <span>Local knowledge of hidden gems</span>
-                  </li>
-                </ul>
-
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="/contact"
-                    aria-label="Contact VentiBoat to book the rental option with skipper"
-                    className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 text-sm font-semibold tracking-wide transition"
-                  >
-                    BOOK WITH SKIPPER
-                  </a>
-                </div>
-              </div>
-            </motion.div>
+            {boat.pricing.map((option) => (
+              <OptionCard key={option.id} {...option} />
+            ))}
           </div>
+        </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-white/80 text-sm">
-              Both options include: Full insurance • Safety equipment •
-              Snorkeling gear • Cooler box • First aid kit
-            </p>
-            <div className="flex justify-center gap-6 mt-6 text-white text-xs">
-              <span>✓ Free cancellation up to 7 days before departure</span>
-              <span>✓ Best price guarantee</span>
-              <span>✓ Secure booking</span>
-            </div>
+        <div className="mt-12 text-center">
+          <p className="text-white/80 text-sm">
+            {boat.included.map((item: string, index: number) => (
+              <span key={index}>{item} • </span>
+            ))}
+          </p>
+          <div className="flex justify-center gap-6 mt-6 text-white text-xs">
+            <span>✓ Free cancellation up to 7 days before departure</span>
+            <span>✓ Best price guarantee</span>
+            <span>✓ Secure booking</span>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { boat } from '@/app/constants/boat';
-import { OptionCard } from './OptionCard';
 import { SectionTitle } from '@/app/components/SectionTitle';
+import { OptionCard } from '@/app/components/OptionCard';
 
 interface ToggleButtonProps {
   active: boolean;
@@ -28,6 +28,11 @@ export const RentalOptions = () => {
   const [rentalType, setRentalType] = useState<
     'withSkipper' | 'withoutSkipper'
   >('withoutSkipper');
+
+  const selectedOption = boat.pricing.find(
+    (option) => option.id === rentalType,
+  );
+
   return (
     <div>
       <SectionTitle title="Rental Options" size="lg" />
@@ -46,7 +51,15 @@ export const RentalOptions = () => {
         </ToggleButton>
       </div>
 
-      <OptionCard type={rentalType} data={boat.pricing[rentalType]} />
+      {selectedOption && (
+        <OptionCard
+          title={selectedOption.title}
+          price={selectedOption.price}
+          description={selectedOption.description}
+          features={selectedOption.features}
+          variant="toggle"
+        />
+      )}
     </div>
   );
 };

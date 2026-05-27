@@ -28,30 +28,34 @@ export const boat = {
     waterCapacity: '45 l',
     capacity: '6 people',
   },
-  pricing: {
-    withSkipper: {
+  pricing: [
+    {
+      id: 'withSkipper',
+      title: 'With Skipper',
       price: 320,
       description:
         'Sit back and relax while our experienced skipper navigates spots according to your preferences.',
       features: [
         'Licensed skipper',
-        'Local knowledge of hidden gems',
         'No license required',
         'Security deposit: €300',
+        'Local knowledge of hidden gems',
       ],
     },
-    withoutSkipper: {
+    {
+      id: 'withoutSkipper',
+      title: 'Without Skipper',
       price: 200,
       description:
-        'Perfect for experienced captains. You will have full control of the vessel.',
+        'Perfect for experienced captains. Take full control of the vessel and explore at your own pace.',
       features: [
         'License required (Category B)',
-        // 'Boat has to be retuned with full fuel tank',
         'Free cancellation 7 days prior',
         'Security deposit: €800',
+        'Available recommended routes and tips',
       ],
     },
-  },
+  ],
   images: [
     '/images/boat/1.png',
     '/images/boat/2.png',
@@ -64,32 +68,19 @@ export const boat = {
     '/images/boat/9.jpg',
     '/images/boat/10.jpeg',
   ],
-  reviews: [
-    {
-      name: 'John D.',
-      rating: 5,
-      comment:
-        'Amazing experience! The boat was beautiful and the skipper was fantastic. Highly recommend!',
-    },
-
-    {
-      name: 'Emily R.',
-      rating: 4,
-      comment:
-        'Great boat and service, but the weather was a bit rough. Still had a wonderful time exploring the coast.',
-    },
-    {
-      name: 'Michael S.',
-      rating: 5,
-      comment:
-        'Perfect for our family trip! The kids loved the snorkeling gear and we enjoyed the spacious deck.',
-    },
-  ],
 
   stats: [
     { label: 'Guests', valueKey: 'capacity' },
     { label: 'Top Speed', valueKey: 'maxSpeed' },
     { label: 'Length', valueKey: 'length' },
     { label: 'Engine Power', valueKey: 'enginePower' },
+  ],
+
+  included: [
+    'Full insurance',
+    'Safety equipment',
+    'Snorkeling gear',
+    'Cooler box',
+    'First aid kit',
   ],
 };

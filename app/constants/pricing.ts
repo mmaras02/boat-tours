@@ -26,11 +26,6 @@ export const pricingData = {
         'When booking directly through our website (no commission fees)',
       amount: '-10%',
     },
-    // {
-    //   name: 'Early Booking',
-    //   description: 'For reservations made at least 30 days before departure',
-    //   amount: '-15%',
-    // },
     {
       name: 'Weekly Special',
       description:

@@ -9,10 +9,6 @@ export const pages: Page[] = [
     title: 'BOAT',
     path: '/boat',
   },
-  // {
-  //   title: 'TOURS',
-  //   path: '/tours',
-  // },
   {
     title: 'CONTACT',
     path: '/contact',
