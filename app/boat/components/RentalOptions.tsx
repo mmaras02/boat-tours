@@ -11,6 +11,8 @@ interface ToggleButtonProps {
 
 const ToggleButton = ({ active, onClick, children }: ToggleButtonProps) => (
   <button
+    id="toggle-button"
+    type="button"
     onClick={onClick}
     className={`flex-1 py-3 px-4 font-semibold transition-all ${
       active

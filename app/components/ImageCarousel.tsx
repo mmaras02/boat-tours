@@ -142,6 +142,8 @@ export function ImageCarousel({
         {totalPositions > 1 && (
           <>
             <button
+              id="prev-button"
+              type="button"
               onClick={goPrev}
               className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white h-10 w-10 flex items-center justify-center transition rounded-full"
               aria-label="Previous image"
@@ -149,6 +151,8 @@ export function ImageCarousel({
               ‹
             </button>
             <button
+              id="next-button"
+              type="button"
               onClick={goNext}
               className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white h-10 w-10 flex items-center justify-center transition rounded-full"
               aria-label="Next image"
@@ -163,6 +167,8 @@ export function ImageCarousel({
         <div className="mt-4 flex items-center justify-center gap-2">
           {Array.from({ length: totalPositions }).map((_, index) => (
             <button
+              type="button"
+              id={`indicator-${index}`}
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-2.5 w-2.5 rounded-full transition ${

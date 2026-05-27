@@ -313,6 +313,7 @@ export const MessageForm = () => {
           </div>
 
           <button
+            id="submit-button"
             type="submit"
             disabled={isSubmitting}
             className={`

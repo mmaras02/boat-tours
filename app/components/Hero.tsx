@@ -50,6 +50,7 @@ export const Hero = ({
           <div className="mt-7 text-center md:text-left">
             <a
               href="/contact"
+              aria-label="Contact VentiBoat to book your tour"
               className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 font-semibold tracking-wide transition"
             >
               BOOK NOW

@@ -28,6 +28,7 @@ export const BoatInfo = () => {
         <div className="text-center mt-20">
           <a
             href="/contact"
+            aria-label="Contact VentiBoat to book this boat"
             className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold py-4 px-8 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             BOOK THIS BOAT NOW

@@ -63,11 +63,13 @@ export const ContactInfo = () => {
               <a
                 href="https://www.facebook.com/people/VentiBoat/61590072562984/?rdid=4mrmxCOrfQGrn9qH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ETsm4s9Z1%2F"
                 className="bg-[#0d3043] hover:bg-[#c79432] p-2 rounded-full"
+                aria-label="Visit VentiBoat on Facebook"
               >
                 <FaFacebookF size={24} color="white" />
               </a>
               <a
                 href="https://www.instagram.com/ventiboat/"
+                aria-label="Visit VentiBoat on Instagram"
                 className="bg-[#0d3043] hover:bg-[#c79432] p-2 rounded-full"
               >
                 <FaInstagram size={24} color="white" />

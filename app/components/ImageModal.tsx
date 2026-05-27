@@ -61,6 +61,8 @@ export const ImageModal = ({
           onClick={closeModal}
         >
           <button
+            id="close-button"
+            type="button"
             onClick={closeModal}
             className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
             aria-label="Close"
@@ -70,6 +72,8 @@ export const ImageModal = ({
 
           {images.length > 1 && (
             <button
+              id="prev-button-image"
+              type="button"
               onClick={prevImage}
               className="absolute left-4 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
               aria-label="Previous"
@@ -97,6 +101,8 @@ export const ImageModal = ({
           {/* Next */}
           {images.length > 1 && (
             <button
+              id="next-button-image"
+              type="button"
               onClick={nextImage}
               className="absolute right-4 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
               aria-label="Next"

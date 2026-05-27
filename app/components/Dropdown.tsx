@@ -20,6 +20,7 @@ export const Dropdown = ({
   return (
     <section className="mb-4">
       <button
+        id="dropdown-button"
         type="button"
         aria-expanded={isOpen}
         aria-controls={contentId}

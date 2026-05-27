@@ -111,7 +111,7 @@ export function Navbar() {
           </ul>
 
           <div className="lg:hidden">
-            <button onClick={toggleMenu}>
+            <button id="menu-button" type="button" onClick={toggleMenu}>
               {isOpen ? <IoMdClose size={28} /> : <GiHamburgerMenu size={28} />}
             </button>
           </div>

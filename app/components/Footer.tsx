@@ -59,11 +59,13 @@ export function Footer() {
             <a
               href="https://www.facebook.com/people/VentiBoat/61590072562984/?rdid=4mrmxCOrfQGrn9qH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ETsm4s9Z1%2F"
               className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
+              aria-label="Visit VentiBoat on Facebook"
             >
               <FaFacebookF size={24} />
             </a>
             <a
               href="https://www.instagram.com/ventiboat/"
+              aria-label="Visit VentiBoat on Instagram"
               className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
             >
               <FaInstagram size={24} />
