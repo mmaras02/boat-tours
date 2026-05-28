@@ -23,10 +23,10 @@ export function SocialLinks({ items, variant = 'panel' }: SocialLinksProps) {
 
   return (
     <div className="flex space-x-4">
-      {items.map(({ label, href, icon: Icon }) => (
+      {items.map(({ label, link, icon: Icon }) => (
         <a
           key={label}
-          href={href}
+          href={link}
           aria-label={`Visit VentiBoat on ${label}`}
           className={config.linkClassName}
           target="_blank"
