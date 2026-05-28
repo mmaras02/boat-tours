@@ -2,15 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaPhoneAlt,
-} from 'react-icons/fa';
-import { CiLocationOn } from 'react-icons/ci';
-import { IoMdMailOpen } from 'react-icons/io';
 import { pages } from '../constants/pages';
+import { contact } from '../constants/contact';
+import { ContactMethods } from './ContactMethods';
+import { SocialLinks } from './SocialLinks';
 
 export function Footer() {
   const pathname = usePathname();
@@ -21,17 +16,7 @@ export function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-1">Contact Us</h3>
           <div className="h-0.5 w-14 bg-[#c79432] mb-6"></div>
-          <ul className="text-gray-300 space-y-2">
-            <li className="flex items-center gap-2">
-              <CiLocationOn /> Uvala Zenta (lučica), Split, Croatia
-            </li>
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt /> +385 91 365 5852 <br /> +385 91 365 5951
-            </li>
-            <li className="flex items-center gap-2">
-              <IoMdMailOpen /> ventiboat@gmail.com
-            </li>
-          </ul>
+          <ContactMethods items={contact.methods} variant="footer" />
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-1">Links</h3>
@@ -55,28 +40,7 @@ export function Footer() {
         <div>
           <h3 className="text-lg font-bold mb-1">Follow Us</h3>
           <div className="h-0.5 w-14 bg-[#c79432] mb-6"></div>
-          <div className="flex space-x-4">
-            <a
-              href="https://www.facebook.com/people/VentiBoat/61590072562984/?rdid=4mrmxCOrfQGrn9qH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ETsm4s9Z1%2F"
-              className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
-              aria-label="Visit VentiBoat on Facebook"
-            >
-              <FaFacebookF size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/ventiboat/"
-              aria-label="Visit VentiBoat on Instagram"
-              className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
-            >
-              <FaInstagram size={24} />
-            </a>
-            {/* <a
-              href="#"
-              className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
-            >
-              <FaTwitter size={24} />
-            </a> */}
-          </div>
+          <SocialLinks items={contact.socialLinks} variant="footer" />
         </div>
       </div>
 

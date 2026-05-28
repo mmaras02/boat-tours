@@ -10,7 +10,6 @@ export const CTASection = () => {
         fill
         className="object-cover"
       />
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-linear-to-br from-[#17384A]/55 to-[#0b4f5a]/45" />
 
       <div className="relative z-10 py-10 text-center">
@@ -31,12 +30,6 @@ export const CTASection = () => {
               →
             </span>
           </Link>
-          {/* <Link
-            href="/tours"
-            className="group/btn inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 px-8 py-4 font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <span>Explore More Tours</span>
-          </Link> */}
         </div>
       </div>
     </section>
