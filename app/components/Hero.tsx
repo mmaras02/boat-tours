@@ -3,24 +3,13 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
-interface HeroButton {
-  text: string;
-  href: string;
-}
-
 interface HeroProps {
   image: string;
   title: string;
   description: ReactNode;
-  buttons?: HeroButton[];
 }
 
-export const Hero = ({
-  image,
-  title,
-  description,
-  buttons = [],
-}: HeroProps) => {
+export const Hero = ({ image, title, description }: HeroProps) => {
   return (
     <section className="relative w-full overflow-hidden flex items-start md:items-center min-h-[calc(100vh-5rem)]">
       <img
@@ -28,7 +17,7 @@ export const Hero = ({
         alt="Hero image"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-[#0b4f5a]/80 via-[#0b4f5a]/50 to-[#0b4f5a]/30" />
+      <div className="absolute inset-0 bg-hero-overlay" />
 
       <div className="relative pt-15 z-10 w-full max-w-7xl mx-auto px-10 lg:px-10 py-6 md:py-16 grid md:grid-cols-12 gap-8 items-start md:items-center">
         <motion.div
@@ -51,7 +40,7 @@ export const Hero = ({
             <a
               href="/contact"
               aria-label="Contact VentiBoat to book your tour"
-              className="inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-6 py-3 font-semibold tracking-wide transition"
+              className="inline-flex items-center gap-2 bg-accent bg-accent-hover text-white px-6 py-3 font-semibold tracking-wide transition"
             >
               BOOK NOW
             </a>

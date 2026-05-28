@@ -6,7 +6,7 @@ const DisplayStats = ({ stat, idx }: { stat: any; idx: number }) => {
   return (
     <div
       key={idx}
-      className="flex flex-col p-5 border-b border-slate-300 last:border-b-0 md:border-b-0 md:[&:nth-child(3)]:border-b-0"
+      className="flex flex-col p-5 border-b border-slate-300 last:border-b-0 md:border-b-0 md:nth-3:border-b-0"
     >
       <p className="text-accent font-bold text-2xl">
         {boat.specifications[stat.valueKey as keyof typeof boat.specifications]}
@@ -41,11 +41,11 @@ export const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold leading-tight text-[#0d3043] mb-1">
+          <h2 className="text-4xl font-bold leading-tight text-navbar mb-1">
             {boat.name}
           </h2>
 
-          <p className="text-[#c79432] uppercase tracking-wide font-semibold mb-6">
+          <p className="text-accent uppercase tracking-wide font-semibold mb-6">
             About The Boat
           </p>
 
@@ -62,7 +62,7 @@ export const About = () => {
           <div className="flex justify-center md:block">
             <Link
               href="/boat"
-              className="inline-block mt-8 mb-10 md:mb-0 bg-[#c79432] text-white font-bold px-6 py-3 hover:bg-[#b5842c] transition-colors duration-300 text-center"
+              className="inline-block mt-8 mb-10 md:mb-0 bg-accent bg-accent-hover text-white font-bold px-6 py-3 transition-colors duration-300 text-center"
             >
               More Details
             </Link>

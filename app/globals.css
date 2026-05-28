@@ -1,48 +1,15 @@
 @import 'tailwindcss';
 
 :root {
-  /* Base Colors */
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Brand Colors */
   --color-accent: #c79432;
   --color-accent-hover: #b6852d;
-  --color-dark-teal: #0b4f5a;
-  --color-dark-teal-hover: #0a4550;
   --color-dark-slate: #17384a;
   --color-navbar: #0d3043;
-
-  /* Spacing */
-  --spacing-section: 5rem;
-  --spacing-card: 1.5rem;
-  --spacing-small: 0.5rem;
-
-  /* Border Radius */
-  --radius-card: 0.5rem;
-  --radius-button: 0.25rem;
-
-  /* Transitions */
-  --transition-base: 0.3s ease;
-  --transition-slow: 0.5s ease;
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
-/* In your global.css or similar */
-/* In your global.css or app.css */
 .about-image {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -57,7 +24,6 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* Utility Classes */
 .playfair-sc {
   font-family: 'Playfair Display SC', serif;
 }
@@ -74,6 +40,10 @@ body {
   color: var(--color-accent);
 }
 
+.text-accent-hover:hover {
+  color: var(--color-accent);
+}
+
 .bg-accent {
   background-color: var(--color-accent);
 }
@@ -82,30 +52,52 @@ body {
   background-color: var(--color-accent-hover);
 }
 
-.bg-dark-teal {
-  background-color: var(--color-dark-teal);
-}
-
-.bg-dark-teal-hover:hover {
-  background-color: var(--color-dark-teal-hover);
+.border-accent {
+  border-color: var(--color-accent);
 }
 
 .text-dark-slate {
   color: var(--color-dark-slate);
 }
 
+.bg-navbar {
+  background-color: var(--color-navbar);
+}
+
+.ring-accent:focus-visible {
+  --tw-ring-color: var(--color-accent);
+}
+
+.bg-hero-overlay {
+  background-image: linear-gradient(
+    to right,
+    rgb(11 79 90 / 80%),
+    rgb(11 79 90 / 50%),
+    rgb(11 79 90 / 30%)
+  );
+}
+
+.bg-options-overlay {
+  background-image: linear-gradient(
+    to right,
+    rgb(11 79 90 / 80%),
+    rgb(11 79 90 / 70%),
+    rgb(11 79 90 / 40%)
+  );
+}
+
+.bg-cta-overlay {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(23 56 74 / 55%),
+    rgb(11 79 90 / 45%)
+  );
+}
+
 .text-fixed-light {
   color: #ffffff !important;
 }
 
-.text-dark {
-  color: var(--foreground);
-}
-
 .dark-background {
-  background-color: #0d3043;
-}
-
-.transition-base {
-  transition: var(--transition-base);
+  background-color: var(--color-navbar);
 }

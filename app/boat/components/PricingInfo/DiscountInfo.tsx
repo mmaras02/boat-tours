@@ -18,7 +18,7 @@ export const DiscountsInfo = () => {
               <p className="font-semibold text-sm">{discount.name}</p>
               <p className="text-xs text-slate-500">{discount.description}</p>
             </div>
-            <span className="font-bold text-[#c79432] text-sm bg-white px-2 py-1 rounded">
+            <span className="font-bold text-accent text-sm bg-white px-2 py-1 rounded">
               {discount.amount}
             </span>
           </div>

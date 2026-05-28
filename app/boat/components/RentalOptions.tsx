@@ -16,7 +16,7 @@ const ToggleButton = ({ active, onClick, children }: ToggleButtonProps) => (
     onClick={onClick}
     className={`flex-1 py-3 px-4 font-semibold transition-all ${
       active
-        ? 'bg-[#c79432] text-white shadow-lg'
+        ? 'bg-accent text-white shadow-lg'
         : 'text-slate-600 bg-slate-100 hover:bg-slate-200'
     }`}
   >

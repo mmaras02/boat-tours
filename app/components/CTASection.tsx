@@ -10,7 +10,7 @@ export const CTASection = () => {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-linear-to-br from-[#17384A]/55 to-[#0b4f5a]/45" />
+      <div className="absolute inset-0 bg-cta-overlay" />
 
       <div className="relative z-10 py-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -23,7 +23,7 @@ export const CTASection = () => {
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
             href="/contact"
-            className="group/btn inline-flex items-center gap-2 bg-[#c79432] hover:bg-[#b6852d] text-white px-8 py-4 font-semibold transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5"
+            className="group/btn inline-flex items-center gap-2 bg-accent bg-accent-hover text-white px-8 py-4 font-semibold transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5"
           >
             <span>Contact Us Now</span>
             <span className="group-hover/btn:translate-x-1 transition-transform duration-300">

@@ -130,7 +130,7 @@ export const MessageForm = () => {
 
   return (
     <div className="px-4 sm:px-6">
-      <div className=" bg-slate-100 shadow-xl border-2 border-slate-200 p-6 md:p-12 border-l-4 border-accent">
+      <div className=" bg-slate-100 shadow-xl border-2 border-slate-200 p-6 md:p-12 border-l-4">
         <div className="mb-10 text-start md:text-left">
           <h2 className="text-2xl font-semibold">Send us a message!</h2>
           <p className="text-slate-500 text-base">

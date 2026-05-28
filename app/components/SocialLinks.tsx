@@ -13,7 +13,7 @@ const variants = {
   },
   panel: {
     linkClassName:
-      'bg-[#0d3043] hover:bg-[#c79432] p-2 rounded-full transition-colors',
+      'bg-navbar bg-accent-hover p-2 rounded-full transition-colors',
     iconColor: 'white',
   },
 } as const;

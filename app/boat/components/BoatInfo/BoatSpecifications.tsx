@@ -12,13 +12,13 @@ export const SpecCard: React.FC<{
   value: React.ReactNode;
 }> = ({ icon: Icon, label, value }) => (
   <div className="bg-slate-50 border border-slate-200 shadow p-4 hover:shadow-md transition">
-    <div className="text-[#c79432] mb-2">
+    <div className="text-accent mb-2">
       <Icon className="text-2xl" />
     </div>
     <div className="text-xs font-semibold uppercase text-slate-500 tracking-wide">
       {label}
     </div>
-    <div className="text-lg font-bold text-[#17384A] mt-1">{value}</div>
+    <div className="text-lg font-bold text-dark-slate mt-1">{value}</div>
   </div>
 );
 

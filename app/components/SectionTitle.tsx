@@ -13,11 +13,11 @@ export const SectionTitle = ({ title, size = 'md' }: SectionTitleProps) => {
   return (
     <div>
       <h3
-        className={`${sizeClasses[size]} font-bold text-[#17384A] flex items-center gap-2`}
+        className={`${sizeClasses[size]} font-bold text-dark-slate flex items-center gap-2`}
       >
         {title}
       </h3>
-      <div className="w-24 h-0.5 bg-[#c79432] mb-4"></div>
+      <div className="w-24 h-0.5 bg-accent mb-4"></div>
     </div>
   );
 };

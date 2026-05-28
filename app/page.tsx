@@ -8,7 +8,7 @@ import { CTASection } from './components/CTASection';
 
 export default function Home() {
   return (
-    <main className="relative pt-20 bg-[#c79432]">
+    <main className="relative pt-20 bg-accent">
       <Hero
         image="/images/hero.jpg"
         title="Welcome to Venti Boat"

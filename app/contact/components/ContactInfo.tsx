@@ -1,4 +1,3 @@
-import { FaRegClock } from 'react-icons/fa';
 import { contact } from '../../constants/contact';
 import { ContactMethods } from '../../components/ContactMethods';
 import { SocialLinks } from '../../components/SocialLinks';
@@ -22,7 +21,7 @@ export const ContactInfo = () => {
             <h2 className="font-semibold text-2xl mt-5">
               Follow us on social media!
             </h2>
-            <div className="h-0.5 w-14 bg-[#c79432] mb-6"></div>
+            <div className="h-0.5 w-14 bg-accent mb-6"></div>
             <SocialLinks items={contact.socialLinks} variant="panel" />
           </div>
         </div>

@@ -29,7 +29,7 @@ export const BoatInfo = () => {
           <a
             href="/contact"
             id="book-now"
-            className="bg-[#c79432] hover:bg-[#b6852d] text-white font-bold py-4 px-8 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-accent bg-accent-hover text-white font-bold py-4 px-8 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             BOOK THIS BOAT NOW
           </a>

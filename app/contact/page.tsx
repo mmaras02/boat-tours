@@ -10,7 +10,7 @@ export default function ContactPage() {
           <h1 className="text-3xl pt-10 md:text-4xl font-bold text-dark-slate mb-1">
             Contact Us
           </h1>
-          <div className="w-24 h-1 bg-[#c79432] mb-6" />
+          <div className="w-24 h-1 bg-accent mb-6" />
         </div>
         <p className="text-center text-gray-600 mb-16 px-4">
           Have questions or want to book our boat? Get in touch with us! We are

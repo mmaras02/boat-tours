@@ -127,7 +127,7 @@ export function ImageCarousel({
 
               {item.title && item.description && (
                 <div className="p-4 md:p-5">
-                  <h3 className="text-lg md:text-xl font-bold text-[#17384A]">
+                  <h3 className="text-lg md:text-xl font-bold text-dark-slate">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
@@ -172,7 +172,7 @@ export function ImageCarousel({
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-2.5 w-2.5 rounded-full transition ${
-                index === currentIndex ? 'bg-[#c79432] w-6' : 'bg-gray-400'
+                index === currentIndex ? 'bg-accent w-6' : 'bg-gray-400'
               }`}
               aria-label={`Go to slide set ${index + 1}`}
             />

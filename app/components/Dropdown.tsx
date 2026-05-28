@@ -25,7 +25,7 @@ export const Dropdown = ({
         aria-expanded={isOpen}
         aria-controls={contentId}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between bg-slate-100 hover:bg-slate-200 px-6 py-4 transition duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c79432] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+        className="w-full flex items-center justify-between bg-slate-100 hover:bg-slate-200 px-6 py-4 transition duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white ring-accent"
       >
         <span className="font-semibold text-lg">{title}</span>
         {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}

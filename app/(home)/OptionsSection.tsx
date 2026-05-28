@@ -15,7 +15,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
         style={{ backgroundImage: `url('${backgroundImage}')` }}
       ></div>
 
-      <div className="absolute inset-0 bg-linear-to-r from-[#0b4f5a]/80 via-[#0b4f5a]/70 to-[#0b4f5a]/40"></div>
+      <div className="absolute inset-0 bg-options-overlay"></div>
 
       <div className="relative z-10 w-full px-6 lg:px-20 py-16">
         <div className="max-w-6xl mx-auto">
@@ -23,7 +23,7 @@ export const OptionsSection = ({ backgroundImage }: OptionsSectionProps) => {
             <h2 className="text-4xl md:text-5xl font-bold text-white uppercase mb-4">
               Choose Your Rental Option
             </h2>
-            <div className="w-24 h-1 bg-[#c79432] mx-auto"></div>
+            <div className="w-24 h-1 bg-accent mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">

@@ -15,10 +15,10 @@ export const ReasonsSection = () => {
                   {benefit.icon}
                 </div>
               </div>
-              <h3 className="text-2xl font-bold uppercase tracking-wide text-[#17384A]">
+              <h3 className="text-2xl font-bold uppercase tracking-wide text-dark-slate">
                 {benefit.title}
               </h3>
-              <span className="mx-auto mt-3 mb-5 h-1 w-14 bg-[#c79432]" />
+              <span className="mx-auto mt-3 mb-5 h-1 w-14 bg-accent" />
               <p className="text-sm leading-6 text-[#4B6070]">
                 {benefit.description}
               </p>
