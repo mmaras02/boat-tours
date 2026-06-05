@@ -82,9 +82,8 @@ export const ImageModal = ({
             </button>
           )}
 
-          {/* Image */}
           <motion.div
-            className="relative w-[90vw] max-w-4xl h-[80vh] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-[90vw] max-w-4xl h-[80vh] overflow-hidden"
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.85, opacity: 0 }}
@@ -98,7 +97,6 @@ export const ImageModal = ({
             />
           </motion.div>
 
-          {/* Next */}
           {images.length > 1 && (
             <button
               id="next-button-image"
@@ -111,7 +109,6 @@ export const ImageModal = ({
             </button>
           )}
 
-          {/* Counter */}
           <p className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/70 text-sm">
             {selectedIndex + 1} / {images.length}
           </p>

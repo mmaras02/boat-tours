@@ -28,7 +28,7 @@ export const About = () => {
           viewport={{ once: true }}
         >
           <img
-            src={boat.images[0]}
+            src="/images/boat/1.png"
             alt={boat.name}
             className="w-full h-full object-cover about-image"
           />

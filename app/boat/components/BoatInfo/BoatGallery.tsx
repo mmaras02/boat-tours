@@ -11,13 +11,14 @@ export const BoatGallery = () => {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto">
-        <div className="hidden md:flex justify-center shadow-xl">
+      <div className="max-w-5xl mx-auto">
+        <div className="hidden md:flex justify-center">
           <Image
             src="/images/boat/2.png"
             alt="Boat image"
             width={900}
             height={400}
+            className="shadow-2xl"
             onClick={() =>
               setSelectedIndex(boat.images.indexOf('/images/boat/2.png'))
             }

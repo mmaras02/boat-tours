@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface CarouselItem {
   key?: string | number;
@@ -88,56 +89,58 @@ export function ImageCarousel({
 
   return (
     <div className={`w-full ${className}`}>
-      <div className="relative overflow-hidden shadow-2xl">
-        <motion.div
-          className="flex"
-          style={{ gap: `${gap}px` }}
-          animate={{ x: `-${getTranslateX()}px` }}
-          transition={{ duration: 0.55, ease: 'easeInOut' }}
-        >
-          {items.map((item, index) => (
-            <article
-              key={item.key ?? `${item.title}-${index}`}
-              className="shrink-0 overflow-hidden bg-white/95 flex flex-col"
-              ref={(el) => {
-                if (el && index === 0) {
-                  const width = el.getBoundingClientRect().width;
-                  setCardWidth(width);
-                }
-                if (el && index === 0) {
-                  const parentWidth =
-                    el.parentElement?.getBoundingClientRect().width;
-                  if (parentWidth) setContainerWidth(parentWidth);
-                }
-              }}
-              style={{
-                width: `calc((100% - ${gap * (effectiveCardsPerView - 1)}px) / ${effectiveCardsPerView})`,
-              }}
-            >
-              <div className="relative w-full h-56 sm:h-64 md:h-72 cursor-pointer">
-                <Image
-                  src={item.image}
-                  alt={item.title ?? 'carousel image'}
-                  fill
-                  sizes={`(max-width: 768px) 100vw, ${100 / effectiveCardsPerView}vw`}
-                  className="object-cover"
-                  onClick={() => onClick?.(index)}
-                />
-              </div>
-
-              {item.title && item.description && (
-                <div className="p-4 md:p-5">
-                  <h3 className="text-lg md:text-xl font-bold text-dark-slate">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
+      <div className="relative overflow-visible px-8 md:px-10">
+        <div className="relative overflow-hidden shadow-2xl">
+          <motion.div
+            className="flex"
+            style={{ gap: `${gap}px` }}
+            animate={{ x: `-${getTranslateX()}px` }}
+            transition={{ duration: 0.55, ease: 'easeInOut' }}
+          >
+            {items.map((item, index) => (
+              <article
+                key={item.key ?? `${item.title}-${index}`}
+                className="shrink-0 overflow-hidden bg-white/95 flex flex-col"
+                ref={(el) => {
+                  if (el && index === 0) {
+                    const width = el.getBoundingClientRect().width;
+                    setCardWidth(width);
+                  }
+                  if (el && index === 0) {
+                    const parentWidth =
+                      el.parentElement?.getBoundingClientRect().width;
+                    if (parentWidth) setContainerWidth(parentWidth);
+                  }
+                }}
+                style={{
+                  width: `calc((100% - ${gap * (effectiveCardsPerView - 1)}px) / ${effectiveCardsPerView})`,
+                }}
+              >
+                <div className="relative w-full h-56 sm:h-64 md:h-72 cursor-pointer">
+                  <Image
+                    src={item.image}
+                    alt={item.title ?? 'carousel image'}
+                    fill
+                    sizes={`(max-width: 768px) 100vw, ${100 / effectiveCardsPerView}vw`}
+                    className="object-cover"
+                    onClick={() => onClick?.(index)}
+                  />
                 </div>
-              )}
-            </article>
-          ))}
-        </motion.div>
+
+                {item.title && item.description && (
+                  <div className="p-4 md:p-5">
+                    <h3 className="text-lg md:text-xl font-bold text-dark-slate">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                )}
+              </article>
+            ))}
+          </motion.div>
+        </div>
 
         {totalPositions > 1 && (
           <>
@@ -145,19 +148,19 @@ export function ImageCarousel({
               id="prev-button"
               type="button"
               onClick={goPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white h-10 w-10 flex items-center justify-center transition rounded-full"
+              className="absolute -left-5 md:-left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white h-10 w-10 flex items-center justify-center transition rounded-full shadow-lg"
               aria-label="Previous image"
             >
-              ‹
+              <ChevronLeft className="h-5 w-5" strokeWidth={2.5} />
             </button>
             <button
               id="next-button"
               type="button"
               onClick={goNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white h-10 w-10 flex items-center justify-center transition rounded-full"
+              className="absolute -right-5 md:-right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white h-10 w-10 flex items-center justify-center transition rounded-full shadow-lg"
               aria-label="Next image"
             >
-              ›
+              <ChevronRight className="h-5 w-5" strokeWidth={2.5} />
             </button>
           </>
         )}
