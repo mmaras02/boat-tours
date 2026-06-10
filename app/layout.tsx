@@ -73,13 +73,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// to do list:
-// - [x] Add pricing by the month
-// - [x] Add all the extra informations (fuel, deposit, etc.) to the boat page
-// - [x] Change hero image to some of our boat
-// - [x] Refactor everything
-// - [x] Fix for tablets also
-// - [x] There is a bug in navbar -> fix it
-// - [x] Add user Reviews
-// - [x] refactor everything
